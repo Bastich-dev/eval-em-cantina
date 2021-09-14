@@ -5,12 +5,12 @@ const headers = new Headers();
 
 export async function getRecipeFromId({ id }) {
     const path = `${urlApi}/recipes/`;
-    const response = await fetch(path, { method: "GET", headers });
+    const response = await fetch(path, { method: "GET", headers }).then(res => res.json());
     return response;
 }
 
 export async function getListRecipesFromSearch() {
     const path = `${urlApi}/recipes/`;
-    const response = await fetch(path, { method: "GET", headers });
+    const response = await fetch(path, { method: "GET", headers }).then(res => res.json());
     return response;
 }

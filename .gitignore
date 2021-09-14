@@ -22,3 +22,8 @@ node_modules/
 
 # Serverless directories
 .serverless/
+
+
+.vscode
+
+build

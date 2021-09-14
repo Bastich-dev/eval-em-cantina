@@ -6,6 +6,23 @@ export default [
         name: "Accueil",
         component: Home,
         exact: true,
-        nav: true,
+    },
+    {
+        path: "/recettes",
+        name: "Accueil",
+        component: Home,
+        exact: true,
+    },
+    {
+        path: "/recette/new",
+        name: "Accueil",
+        component: Home,
+        exact: true,
+    },
+    {
+        path: "/recette/edit",
+        name: "Accueil",
+        component: Home,
+        exact: true,
     },
 ];

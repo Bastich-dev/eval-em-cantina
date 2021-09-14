@@ -28,19 +28,19 @@ li {
 /* ///////////////////   VARIABLES CSS  ////////////////////////// */
 
 :root {
-    --primary-bg-color: #00d1b2;
-    --secondary-bg-color: white;
+    --primary-bg-color: #38a700;
+    --secondary-bg-color: #fcfff7;
 
-    --variant-1-bg-color: #5aa9e6;
-    --variant-2-bg-color: #ffe45e;
-    --variant-3-bg-color: #ff6392;
-    --variant-4-bg-color: #89043d;
+    --variant-1-bg-color: #21a0a0;
+    --variant-2-bg-color: #f2bb05;
+    --variant-3-bg-color: #ee2e31;
+    --variant-4-bg-color: #aaa;
 
     --primary-font-color: black;
     --primary-font-family: "Lato", sans-serif;
     --primary-font-size: 22px;
 
-    --secondary-font-color: black;
+    --secondary-font-color: #700548;
     --secondary-font-family: "Roboto", sans-serif;
     --secondary-font-size: 18px;
 
@@ -49,27 +49,40 @@ li {
     --details-font-size: 12px;
 }
 
+/* ///////////////////   HEADER CSS  ////////////////////////// */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: calc(1.7vh + 1.7vw);
+    padding: 0px calc(2.7vh + 2.7vw);
+    font-weight: bold;
+}
+
 /* ///////////////////   COMMON CSS  ////////////////////////// */
 
 * {
     font-family: var(--primary-font-family);
 }
 
-.container {
-    width: 90%;
-    margin: 0 5%;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 900px) {
-    .container {
-        width: 100%;
-        margin: 0;
-    }
+/* ///////////////////   HOME CSS  ////////////////////////// */
+
+.cardRecipe:hover {
+    transform: scale(1.05);
 }
 
-@media (max-width: 1900px) {
-    .container {
-        width: 80%;
-        margin: 0 10%;
-    }
+.ant-input:hover,
+.ant-input:focus {
+    outline: none !important;
 }
