@@ -81,8 +81,10 @@ header h1 {
 .cardRecipe:hover {
     transform: scale(1.05);
 }
-
-.ant-input:hover,
-.ant-input:focus {
-    outline: none !important;
+.ant-input-affix-wrapper:hover,
+.ant-input-affix-wrapper-focused,
+.ant-select:hover > div,
+.ant-select:focus > div,
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: var(--primary-bg-color) !important;
 }

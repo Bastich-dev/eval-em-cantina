@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Avatar, Col } from "antd";
-import { EditOutlined, DeleteOutlined, EyeOutlined, UserOutlined } from "@ant-design/icons";
+import { Card } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 import HeartSvg from "../../media/img/heart.svg";
 
@@ -31,20 +31,20 @@ export default function CardRecipe({ data }) {
     };
 
     return (
-        <Card className="cardRecipe" style={styles.card} cover={<img style={{ height: 150, objectFit: "cover" }} alt="example" src={data.photo} />}>
+        <Card className="cardRecipe" style={styles.card} cover={<img style={{ height: 150, objectFit: "cover" }} alt={data.titre} src={data.photo} />}>
             <div style={styles.container}>
                 <div style={styles.title}>{data.titre}</div>
                 <div style={styles.description}> {data.description} </div>
                 <div>
                     Niveau :
-                    {getLevel().map((el, key) => (
-                        <img src={HeartSvg} style={styles.heart} />
+                    {getLevel().map((e, key) => (
+                        <img alt={"niveau " + (key + 1)} key={key} src={HeartSvg} style={styles.heart} />
                     ))}
                 </div>
                 <div>Temps de préparation : {getTime()} </div>
                 <div>
-                    {howMany.map((el, key) => (
-                        <UserOutlined style={{ color: "grey" }} />
+                    {howMany.map((e, key) => (
+                        <UserOutlined key={key} style={{ color: "grey" }} />
                     ))}
                     <span style={styles.howmany}> {data.personnes + " personnes"}</span>
                 </div>

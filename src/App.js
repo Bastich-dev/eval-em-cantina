@@ -4,7 +4,6 @@ import routes from "./routes";
 import "antd/dist/antd.css";
 import "./App.css";
 import Header from "./components/_common/Header";
-import { ConfigProvider } from "antd";
 import ScrollToTop from "./components/_common/ScrollToTop";
 export default function App() {
     return (

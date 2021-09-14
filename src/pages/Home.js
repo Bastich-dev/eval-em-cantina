@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Select } from "antd";
+import { Row, Col } from "antd";
 import Title from "../components/Home/Title";
-import Animation from "../components/Home/Animation";
 import CardRecipe from "../components/Home/CardRecipe";
 import CardAddRecipe from "../components/Home/CardAddRecipe";
 
 import { getListRecipesFromSearch } from "../utils/API_Cantina";
 import FormSearch from "../components/Home/FormSearch";
-import { BackTop } from "antd";
 
-const { Option } = Select;
-
-export default function Home(props) {
+export default function Home() {
     const [listRecipes, setlistRecipes] = useState();
 
     useEffect(() => {

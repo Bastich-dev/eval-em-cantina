@@ -79,11 +79,6 @@
     width: 100%;
 }
 
-.animated-title p {
-    text-align: center;
-    width: 100%;
-}
-
 .animated-title .raise {
     --color: #38a700;
     --hover: #66c887;

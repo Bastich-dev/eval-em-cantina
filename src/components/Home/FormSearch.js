@@ -27,26 +27,22 @@ export default function FormSearch(props) {
                 <Input allowClear size="large" style={styles.input} placeholder="Exemple : Pizza, Onigiri, Burger ... " />
             </Col>
             <Col span={12}>
-                <Form>
-                    <Form.Item>
-                        <Select
-                            size="large"
-                            showSearch
-                            style={styles.input}
-                            placeholder="Temps de préparation"
-                            optionFilterProp="children"
-                            onChange={onChange}
-                            onFocus={onFocus}
-                            onBlur={onBlur}
-                            onSearch={onSearch}
-                            allowClear
-                            filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}>
-                            <Option value="jack">Jack</Option>
-                            <Option value="lucy">Lucy</Option>
-                            <Option value="tom">Tom</Option>
-                        </Select>
-                    </Form.Item>
-                </Form>
+                <Select
+                    size="large"
+                    showSearch
+                    style={styles.input}
+                    placeholder="Temps de préparation"
+                    optionFilterProp="children"
+                    onChange={onChange}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    onSearch={onSearch}
+                    allowClear
+                    filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}>
+                    <Option value="jack">Jack</Option>
+                    <Option value="lucy">Lucy</Option>
+                    <Option value="tom">Tom</Option>
+                </Select>
             </Col>
             <Col span={12}>
                 <Select
