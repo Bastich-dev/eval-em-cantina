@@ -1,5 +1,5 @@
 import React from "react";
-import "./title-animation.css";
+import "../../css/title-animation.css";
 
 export default function Title() {
     return (
@@ -7,7 +7,10 @@ export default function Title() {
             <div className="text-top">
                 <div>
                     <span className="title">Le retour du jet d'ail</span>
-                    <span className="description">De Harry Potter à Star Wars, en passant par Dragon Ball, un hommage gastronomique à des références cultes et une série d'énigmes pour tester vos connaissances geek.</span>
+                    <span className="description">
+                        De Harry Potter à Star Wars, en passant par Dragon Ball, un hommage gastronomique à des références cultes et une série
+                        d'énigmes pour tester vos connaissances geek.
+                    </span>
                 </div>
             </div>
 

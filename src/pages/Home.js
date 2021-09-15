@@ -4,10 +4,12 @@ import Title from "../components/Home/Title";
 import CardRecipe from "../components/Home/CardRecipe";
 import CardAddRecipe from "../components/Home/CardAddRecipe";
 
-import { getListRecipesFromSearch } from "../utils/API_Cantina";
+import { getListAllRecipes } from "../utils/API_Cantina";
 import FormSearch from "../components/Home/FormSearch";
 
 export default function Home() {
+    //// ANIMATIONS
+
     //////// STATES
 
     const [listRecipesInit, setListRecipesInit] = useState();
@@ -76,10 +78,12 @@ export default function Home() {
     //////// LIFECYCLE
 
     useEffect(() => {
-        getListRecipesFromSearch().then(recipes => {
-            setListRecipesInit(recipes);
-            setListRecipes(recipes);
-            console.log(recipes);
+        getListAllRecipes().then(recipes => {
+            setTimeout(() => {
+                setListRecipesInit(recipes);
+                setListRecipes(recipes);
+                console.log(recipes);
+            }, 2500);
         });
     }, []);
 
@@ -87,7 +91,7 @@ export default function Home() {
         setListRecipes(
             listRecipesInit?.filter(e => compareSearch(e) && comparePersons(e) && compareTime(e) && compareIngredients(e) && compareLevel(e))
         );
-    }, [searchInput]);
+    }, [searchInput, listRecipesInit]);
 
     return (
         <Row style={styles.row} justify="center">
@@ -101,15 +105,33 @@ export default function Home() {
             </Col>
             <Col span={18}>
                 <Row gutter={[36, 36]}>
-                    {listRecipes &&
-                        listRecipes.map((el, key) => (
-                            <Col span={6} key={key}>
-                                <CardRecipe data={el} />
+                    {listRecipes ? (
+                        <>
+                            {listRecipes &&
+                                listRecipes.map((el, key) => (
+                                    <Col span={6} key={key}>
+                                        <CardRecipe data={el} />
+                                    </Col>
+                                ))}
+                            <Col span={6}>
+                                <CardAddRecipe />
                             </Col>
-                        ))}
-                    <Col span={6}>
-                        <CardAddRecipe />
-                    </Col>
+                        </>
+                    ) : (
+                        <Col span={24} className="center">
+                            <div class="breeding-rhombus-spinner">
+                                <div class="rhombus child-1"></div>
+                                <div class="rhombus child-2"></div>
+                                <div class="rhombus child-3"></div>
+                                <div class="rhombus child-4"></div>
+                                <div class="rhombus child-5"></div>
+                                <div class="rhombus child-6"></div>
+                                <div class="rhombus child-7"></div>
+                                <div class="rhombus child-8"></div>
+                                <div class="rhombus big"></div>
+                            </div>
+                        </Col>
+                    )}
                 </Row>
             </Col>
         </Row>

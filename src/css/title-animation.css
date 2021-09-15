@@ -80,8 +80,8 @@
 }
 
 .animated-title .raise {
-    --color: #38a700;
-    --hover: #66c887;
+    --color: var(--primary-bg-color);
+    --hover: var(--variant-1-bg-color);
 }
 
 .animated-title .raise:hover,
@@ -99,8 +99,8 @@
 .animated-title button {
     cursor: pointer;
     background: none;
-    border: 2px solid #38a700;
-    color: #38a700 !important;
+    border: 2px solid var(--primary-bg-color);
+    color: var(--primary-bg-color) !important;
     font: inherit;
     line-height: 1;
     margin: 0.5em;

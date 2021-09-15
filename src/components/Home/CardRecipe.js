@@ -1,11 +1,13 @@
 import React from "react";
 import { Card } from "antd";
 import { UserOutlined } from "@ant-design/icons";
-
+import { useHistory } from "react-router-dom";
 import HeartSvg from "../../media/img/heart.svg";
 
 export default function CardRecipe({ data }) {
     const howMany = Array.from(Array(data.personnes).keys());
+
+    const history = useHistory();
 
     const getTime = () => {
         const minutes = data.tempsPreparation % 60;
@@ -30,8 +32,18 @@ export default function CardRecipe({ data }) {
         }
     };
 
+    const goToRecipe = () => {
+        // setTimeout(() => {
+        history.push("/recette/new");
+        // }, 1500);
+    };
+
     return (
-        <Card className="cardRecipe" style={styles.card} cover={<img style={{ height: 150, objectFit: "cover" }} alt={data.titre} src={data.photo} />}>
+        <Card
+            onClick={goToRecipe}
+            className="cardRecipe"
+            style={styles.card}
+            cover={<img style={{ height: 150, objectFit: "cover" }} alt={data.titre} src={data.photo} />}>
             <div style={styles.container}>
                 <div style={styles.title}>{data.titre}</div>
                 <div style={styles.description}> {data.description} </div>

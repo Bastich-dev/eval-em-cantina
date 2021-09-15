@@ -1,28 +1,29 @@
 import Home from "./pages/Home";
+import Recipe from "./pages/Recipe";
 
 export default [
     {
         path: "/",
-        name: "Accueil",
+        name: "Liste des recettes",
         component: Home,
         exact: true,
     },
     {
         path: "/recettes",
-        name: "Accueil",
+        name: "Liste des recettes",
         component: Home,
         exact: true,
     },
     {
         path: "/recette/new",
-        name: "Accueil",
-        component: Home,
+        name: "Nouvelle recette",
+        component: Recipe,
         exact: true,
     },
     {
         path: "/recette/edit",
-        name: "Accueil",
-        component: Home,
-        exact: true,
+        name: "Modifier recette",
+        component: Recipe,
+        exact: false,
     },
 ];

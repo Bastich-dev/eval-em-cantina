@@ -1,0 +1,23 @@
+/* /////////////////////// RETURN BUTTON PAGE */
+
+.returnPage {
+    cursor: pointer;
+    transition: 0.5s;
+    width: max-content;
+}
+
+.returnPage:hover {
+    transform: scale(1.2);
+}
+
+.returnPage .icon {
+    font-size: 52px;
+}
+
+.returnPage .icon-2 {
+    position: relative;
+    left: -10px;
+    font-size: 52px;
+}
+
+/* /////////////////////// FORM */

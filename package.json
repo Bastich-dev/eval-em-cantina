@@ -8,19 +8,12 @@
   "keywords": [
     "JSX",
     "React",
-    "WEBPACK",
-    "DJANGO"
+    "WEBPACK"
   ],
   "author": {
     "name": "Bastien Chantrel",
     "email": "bastien.chantrel.pro@gmail.com",
     "url": "https://github.com/BastosC"
-  },
-  "config": {
-    "name": "foo",
-    "config": {
-      "port": "8080"
-    }
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
