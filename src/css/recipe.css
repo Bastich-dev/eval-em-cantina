@@ -21,3 +21,11 @@
 }
 
 /* /////////////////////// FORM */
+
+.formRecipe {
+    margin-top: 20px;
+}
+
+.formRecipe .ant-select-selection-overflow {
+    height: 80px;
+}

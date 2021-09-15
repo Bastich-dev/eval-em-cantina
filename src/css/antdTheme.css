@@ -1,0 +1,54 @@
+.ant-input-affix-wrapper:hover,
+.ant-input-affix-wrapper-focused,
+.ant-select:hover > div,
+.ant-select:focus > div,
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector,
+.ant-form-item .ant-mentions,
+.ant-form-item textarea.ant-input:hover,
+.ant-form-item .ant-mentions,
+.ant-form-item textarea.ant-input:focus,
+.ant-input:focus,
+.ant-input:hover {
+    border-color: var(--primary-bg-color) !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+    border-color: var(--variant-1-bg-color);
+    background: var(--variant-1-bg-color);
+}
+
+.ant-btn-primary {
+    color: #fff;
+    border-color: var(--primary-bg-color);
+    background: var(--primary-bg-color);
+}
+
+.ant-btn-dangerous.ant-btn-primary {
+    color: #fff;
+    border-color: var(--variant-3-bg-color);
+    background: var(--variant-3-bg-color);
+}
+
+.ant-input-affix-wrapper,
+.ant-select-show-search.ant-select:not(.ant-select-customize-input) .ant-select-selector,
+.ant-select-selector,
+textarea.ant-input,
+.ant-input {
+    color: var(--variant-4-bg-color);
+    border: 1px solid var(--variant-4-bg-color);
+}
+
+.ant-rate-star > div:focus-visible,
+.ant-rate-star * {
+    color: var(--primary-bg-color);
+    border-color: var(--primary-bg-color);
+    outline-color: var(--primary-bg-color);
+}
+
+.ant-rate-star-zero,
+.ant-rate-star-zero * {
+    color: var(--variant-4-bg-color);
+    border-color: var(--variant-4-bg-color);
+    outline-color: var(--variant-4-bg-color);
+}

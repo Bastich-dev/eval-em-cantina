@@ -88,6 +88,7 @@
 .animated-title .raise:focus {
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     transform: translateY(-0.25em);
+    outline: none;
 }
 
 .animated-title button:hover,
