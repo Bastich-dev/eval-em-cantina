@@ -5,9 +5,9 @@ import { Form, Input } from "antd";
 export default function Title() {
     return (
         <React.Fragment>
+            <h1>Ma super recette :</h1>
             <Form.Item
                 name="username"
-                label="Name"
                 rules={[
                     {
                         required: true,
