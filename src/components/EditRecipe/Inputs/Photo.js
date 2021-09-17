@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Form, Input, Button } from "antd";
-import Loading from "../../../_common/Loading";
+import Loading from "../../_common/Loading";
 
 import { ArrowUpOutlined } from "@ant-design/icons";
 

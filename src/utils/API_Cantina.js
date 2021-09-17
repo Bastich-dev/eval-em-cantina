@@ -15,15 +15,15 @@ export async function getRecipeFromId({ id }) {
     return response;
 }
 
-export async function createRecipe() {
+export async function createRecipe({ data }) {
     const path = `${urlApi}/recipes/`;
-    const response = await fetch(path, { method: "POST", headers }).then(res => res.json());
+    const response = await fetch(path, { method: "POST", headers }, data).then(res => res.json());
     return response;
 }
 
-export async function updateRecipe({ id }) {
+export async function updateRecipe({ id, data }) {
     const path = `${urlApi}/recipe/${id}/`;
-    const response = await fetch(path, { method: "PUT", headers }).then(res => res.json());
+    const response = await fetch(path, { method: "PUT", headers }, data).then(res => res.json());
     return response;
 }
 

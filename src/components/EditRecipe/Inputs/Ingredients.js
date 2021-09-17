@@ -21,21 +21,21 @@ export default function Ingredients() {
                                     {...restField}
                                     name={[name, "name"]}
                                     fieldKey={[fieldKey, "name"]}
-                                    rules={[{ required: true, message: "Missing first name" }]}>
-                                    <Input placeholder="Nom de l'ingredient" />
+                                    rules={[{ required: true, message: "Nom requis" }]}>
+                                    <Input placeholder="Nom de l'ingredient" size="large" />
                                 </Form.Item>
                                 <Form.Item
                                     {...restField}
                                     name={[name, "quantity"]}
                                     fieldKey={[fieldKey, "quantity"]}
-                                    rules={[{ required: true, message: "Missing last name" }]}>
-                                    <Input placeholder="Quantité" />
+                                    rules={[{ required: true, message: "Quantité requis" }]}>
+                                    <Input placeholder="Quantité" size="large" />
                                 </Form.Item>
                                 <MinusCircleOutlined onClick={() => remove(name)} />
                             </Space>
                         ))}
                         <Form.Item>
-                            <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
+                            <Button onClick={() => add()} icon={<PlusOutlined />} style={{ height: 50, width: "100%" }}>
                                 Ajouter ingrédient
                             </Button>
                         </Form.Item>

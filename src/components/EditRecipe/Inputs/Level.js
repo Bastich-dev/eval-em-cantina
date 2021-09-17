@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Form, Radio } from "antd";
-import ImagePadawan from "../../../../media/img/padawan.png";
-import ImageJedi from "../../../../media/img/jedi.jpg";
-import ImageMaitre from "../../../../media/img/maitre.png";
+import ImagePadawan from "../../../media/img/padawan.png";
+import ImageJedi from "../../../media/img/jedi.jpg";
+import ImageMaitre from "../../../media/img/maitre.png";
 
 export default function Level() {
     const [value, setValue] = React.useState(1);

@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
-import Recipe from "./pages/Recipe";
+import EditRecipe from "./pages/EditRecipe";
+import ViewRecipe from "./pages/ViewRecipe";
 
 export default [
     {
@@ -9,21 +10,21 @@ export default [
         exact: true,
     },
     {
-        path: "/recettes",
-        name: "Liste des recettes",
-        component: Home,
+        path: "/recette/",
+        name: "Voir une recette",
+        component: ViewRecipe,
         exact: true,
     },
     {
-        path: "/recette/new",
+        path: "/new",
         name: "Nouvelle recette",
-        component: Recipe,
+        component: EditRecipe,
         exact: true,
     },
     {
-        path: "/recette/edit",
-        name: "Modifier recette",
-        component: Recipe,
+        path: "/edit",
+        name: "Modifier une recette",
+        component: EditRecipe,
         exact: false,
     },
 ];

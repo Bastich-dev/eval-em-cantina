@@ -1,13 +1,20 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import routes from "./routes";
+
 import "antd/dist/antd.css";
+import "./css/antdTheme.css";
 import "./App.css";
+import "./css/common.css";
+
 import Header from "./components/_common/Header";
 import ScrollToTop from "./components/_common/ScrollToTop";
+import { ToastContainer } from "react-toastify";
+
 export default function App() {
     return (
         <React.Fragment>
+            <ToastContainer />
             <Header />
             <BrowserRouter>
                 <main>

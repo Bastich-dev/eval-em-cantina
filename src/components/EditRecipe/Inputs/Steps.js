@@ -20,11 +20,11 @@ export default function Steps() {
             <h2>Etapes</h2>
 
             <Form.List
-                name="names"
+                name="steps"
                 rules={[
                     {
-                        validator: async (_, names) => {
-                            if (!names || names.length < 2) {
+                        validator: async (_, steps) => {
+                            if (!steps || steps.length < 2) {
                                 return Promise.reject(new Error("Il faut au moins 2 étapes"));
                             }
                         },
@@ -41,19 +41,17 @@ export default function Steps() {
                                         {
                                             required: true,
                                             whitespace: true,
-                                            message: "Please input passenger's name or delete this field.",
+                                            message: "Cette étape est vide, veuillez la remplir",
                                         },
                                     ]}
                                     noStyle>
-                                    <Input placeholder="passenger name" style={{ width: "60%" }} />
+                                    <Input.TextArea rows={3} placeholder={"Etape " + (index + 1)} style={{ width: "90%" }} />
                                 </Form.Item>
-                                {fields.length > 1 ? (
-                                    <MinusCircleOutlined className="dynamic-delete-button" onClick={() => remove(field.name)} />
-                                ) : null}
+                                {fields.length > 1 ? <MinusCircleOutlined style={{ marginLeft: 5 }} onClick={() => remove(field.name)} /> : null}
                             </Form.Item>
                         ))}
                         <Form.Item>
-                            <Button type="dashed" onClick={() => add()} style={{ width: "60%" }} icon={<PlusOutlined />}>
+                            <Button onClick={() => add()} style={{ width: "90%", height: 50 }} icon={<PlusOutlined />}>
                                 Ajouter étape
                             </Button>
 

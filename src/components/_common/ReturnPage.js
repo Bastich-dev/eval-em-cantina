@@ -6,7 +6,7 @@ export default function ReturnPage() {
     const history = useHistory();
 
     return (
-        <div className="returnPage" onClick={() => history.push("/recettes")}>
+        <div className="returnPage" onClick={() => history.push("/")}>
             <ArrowLeftOutlined className="icon" />
             <MinusOutlined className="icon-2" />
         </div>
