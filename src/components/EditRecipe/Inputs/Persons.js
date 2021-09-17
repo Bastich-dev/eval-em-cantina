@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { Form, Rate } from "antd";
 import { UserOutlined, UserAddOutlined } from "@ant-design/icons";
 
-export default function Title() {
-    const [activeRate, setActiveRate] = useState(1);
-    const [activeValue, setActiveValue] = useState(null);
+export default function Persons({ initValue }) {
+    const [activeRate, setActiveRate] = useState(initValue);
+    const [activeValue, setActiveValue] = useState(initValue);
 
     const customIcons = {
         1: <UserOutlined />,
@@ -21,11 +21,18 @@ export default function Title() {
     };
 
     return (
-        <Form.Item name="name">
-            <div style={styles.container} onMouseLeave={() => activeValue && setActiveRate(activeValue)}>
-                <div style={styles.text}>
-                    Pour {activeValue ?? activeRate} Personnes {activeValue ? activeValue === 10 && " ou +" : activeRate === 10 && " ou +"}
-                </div>
+        <div style={styles.container} onMouseLeave={() => activeValue && setActiveRate(activeValue)}>
+            <div style={styles.text}>
+                Pour {activeValue ?? activeRate} Personnes {activeValue ? activeValue === 10 && " ou +" : activeRate === 10 && " ou +"}
+            </div>
+            <Form.Item
+                name="personnes"
+                rules={[
+                    {
+                        required: true,
+                        message: "Requis",
+                    },
+                ]}>
                 <Rate
                     style={styles.rate}
                     character={({ index }) => customIcons[index + 1]}
@@ -34,8 +41,8 @@ export default function Title() {
                     value={activeRate}
                     count={10}
                 />
-            </div>
-        </Form.Item>
+            </Form.Item>
+        </div>
     );
 }
 

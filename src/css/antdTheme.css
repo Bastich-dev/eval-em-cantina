@@ -35,8 +35,21 @@
 .ant-select-selector,
 textarea.ant-input,
 .ant-input {
-    color: var(--variant-4-bg-color);
     border: 1px solid var(--variant-4-bg-color);
+}
+
+.ant-btn,
+.ant-btn:active,
+.ant-btn:focus {
+    border: 1px dashed var(--variant-4-bg-color);
+}
+
+.ant-input-affix-wrapper > input:placeholder-shown,
+.ant-select-show-search.ant-select:not(.ant-select-customize-input) .ant-select-selector > input:placeholder-shown,
+.ant-select-selector > input:placeholder-shown,
+textarea.ant-input > input:placeholder-shown,
+.ant-input > input:placeholder-shown {
+    color: var(--variant-4-bg-color);
 }
 
 .ant-rate-star > div:focus-visible,

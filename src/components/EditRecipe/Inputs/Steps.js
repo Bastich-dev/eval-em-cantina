@@ -20,7 +20,7 @@ export default function Steps() {
             <h2>Etapes</h2>
 
             <Form.List
-                name="steps"
+                name="etapes"
                 rules={[
                     {
                         validator: async (_, steps) => {

@@ -7,14 +7,14 @@ export default function Title() {
         <React.Fragment>
             <h1>Ma super recette :</h1>
             <Form.Item
-                name="username"
+                name="titre"
                 rules={[
                     {
                         required: true,
-                        message: "Please input your name",
+                        message: "Requis",
                     },
                 ]}>
-                <Input style={styles.input} />
+                <Input style={styles.input} placeholder="Titre de ma recette" />
             </Form.Item>
         </React.Fragment>
     );

@@ -9,7 +9,7 @@ import Level from "./Inputs/Level";
 import Persons from "./Inputs/Persons";
 import Time from "./Inputs/Time";
 import SubmitButton from "./SubmitButton";
-import { getRecipeFromId } from "../../utils/API_Cantina";
+import { getRecipeFromId, updateRecipe } from "../../utils/API_Cantina";
 import Loading from "../_common/Loading";
 import DeleteButton from "./DeleteButton";
 import { createRecipe } from "../../utils/API_Cantina";
@@ -26,22 +26,38 @@ export default function FormRecipe() {
     }, []);
 
     const onFinish = (value, allValues) => {
-
-if ( id){
-
-
-}
-else{
-    createRecipe({data : allValues})
-}
-
-        console.log(value);
-        console.log(allValues);
+        let initObject = {
+            description: "",
+            etapes: [],
+            ingredients: [],
+            niveau: "",
+            personnes: 1,
+            photo: "",
+            tempsPreparation: 0,
+            titre: "",
+        };
+        // ///// Format data
+        // if (initObject.niveau === undefined) initObject.niveau = "padawan";
+        // initObject.ingredients = initObject.ingredients.map(el => [el[0], el[1]]);
+        // if (id) {
+        //     updateRecipe({ id, data: allValues }).then(res => {
+        //         console.log(res);
+        //     });
+        // } else {
+        //     // createRecipe({data : allValues})
+        // }
+        // console.log(value);
     };
-
-    return (
-        <Form onFinish={onFinish}   initialValues={{ remember: true }}       autoComplete="off"
-        >
+    console.log(recipeData);
+    return recipeData ? (
+        <Form
+            onFinish={onFinish}
+            initialValues={{
+                ...recipeData,
+                ingredient: recipeData.ingredients ? recipeData.ingredients.map(el => ({ title: el[1], quantity: el[0] })) : [],
+                remember: true,
+            }}
+            autoComplete="off">
             <Row className="formRecipe" gutter={[24, 24]} justify="center">
                 {!recipeData && (
                     <Col span={20} offset={2} style={{ height: "80vh" }}>
@@ -54,27 +70,31 @@ else{
                         <Col span={14} className="formInputs">
                             <Title />
                             <Description />
-                            <Time />
-                            <Level />
+                            <Time initValue={recipeData.tempsPreparation} />
+                            <Level initValue={recipeData.niveau} />
                         </Col>
                         <Col span={10} className="aside">
                             <Photo />
-                            <Persons />
+                            <Persons initValue={recipeData.personnes} />
                         </Col>
                         <Col span={14} className="formInputs">
                             <Steps />
                         </Col>
                         <Col span={10} className="aside">
-                            <Ingredients />
+                            <Ingredients initValue={recipeData.ingredients} />
                         </Col>
-                        <Col span={6}>
+                        <Col lg={6} md={12} sm={24}>
                             <SubmitButton id={id} data={recipeData} />
                         </Col>
-                        <Col span={6}>{id && <DeleteButton id={id} />}</Col>
+                        <Col lg={6} md={12} sm={24}>
+                            {id && <DeleteButton id={id} />}
+                        </Col>
                     </>
                 )}
             </Row>
         </Form>
+    ) : (
+        <></>
     );
 }
 

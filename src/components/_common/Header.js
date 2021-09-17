@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <header style={styles.header}>
             <img src={GarlicIcon} alt="garlic icon" style={styles.icon} />
-            <h1 style={styles.title}>Le retour du jet d'ail</h1>
+            <h1 style={styles.title}>Cantina</h1>
         </header>
     );
 }

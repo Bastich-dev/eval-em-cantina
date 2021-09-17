@@ -13,12 +13,14 @@ export default function Photo() {
         if (value) {
             setimageUrl(null);
             let resultUrl = value;
+            const isHttps = resultUrl.indexOf("https://") > -1;
+
             if (resultUrl.indexOf("://") > -1) {
                 resultUrl = resultUrl.split("://")[1];
                 setvalue(resultUrl);
             }
             setTimeout(() => {
-                setimageUrl("https://" + resultUrl);
+                setimageUrl((isHttps ? "https://" : "http://") + resultUrl);
             }, 1000);
         }
     };
@@ -27,7 +29,6 @@ export default function Photo() {
         <React.Fragment>
             <h1>Lien de l'image :</h1>
             <Form.Item name="photo">
-                {/* <span> Lien de l'image : </span> */}
                 <Input
                     addonBefore="http://"
                     value={value}

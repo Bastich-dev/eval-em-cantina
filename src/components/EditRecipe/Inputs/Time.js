@@ -1,13 +1,22 @@
 import React from "react";
 
 import { Form, Input, TimePicker } from "antd";
+import moment from "moment";
 
-export default function Title() {
+export default function Time({ initValue }) {
     return (
-        <Form.Item name="name">
+        <>
             <h2>Temps de préparation :</h2>
-            <TimePicker size="large" style={styles.input} placeholder="00h 00min 00sec" />
-        </Form.Item>
+            <Form.Item name="tempsPreparations">
+                <TimePicker
+                    defaultValue={moment(moment.utc().startOf("day").add({ minutes: initValue }).format("HH:mm:ss"), "HH:mm:ss")}
+                    showNow={false}
+                    size="large"
+                    style={styles.input}
+                    placeholder="00h 00min 00sec"
+                />
+            </Form.Item>
+        </>
     );
 }
 
