@@ -27,7 +27,7 @@ export default function SubmitButton({ id }) {
 
     return (
         <Button style={styles.button} type="primary" danger size="large" loading={loading} onClick={deleteRecipe}>
-            Supprimer
+            Supprimer recette
         </Button>
     );
 }
@@ -37,5 +37,6 @@ const styles = {
         width: "100%",
         height: 60,
         borderRadius: 10,
+        fontSize: 20,
     },
 };

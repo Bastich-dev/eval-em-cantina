@@ -9,12 +9,14 @@ import "./css/common.css";
 
 import Header from "./components/_common/Header";
 import ScrollToTop from "./components/_common/ScrollToTop";
+
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
     return (
         <React.Fragment>
-            <ToastContainer />
+            <ToastContainer theme="colored" />
             <Header />
             <BrowserRouter>
                 <main>

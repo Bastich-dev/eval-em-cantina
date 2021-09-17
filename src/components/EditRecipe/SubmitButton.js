@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button, Form, Input } from "antd";
-export default function SubmitButton({ id, data }) {
+export default function SubmitButton({ id }) {
     const [loading, setloading] = React.useState(false);
 
     return (
@@ -16,5 +16,6 @@ const styles = {
         width: "100%",
         height: 60,
         borderRadius: 10,
+        fontSize: 20,
     },
 };

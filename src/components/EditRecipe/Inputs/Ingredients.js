@@ -6,13 +6,31 @@ export default function Ingredients({ initValue }) {
     return (
         <React.Fragment>
             <h2>Ingrédients</h2>
-            <Form.List name="ingredient">
-                {(fields, { add, remove }) => (
+            <Form.List
+                name="ingredient"
+                rules={[
+                    {
+                        validator: async (_, items) => {
+                            if (!items || items.length < 2) {
+                                return Promise.reject(new Error("Il faut au moins 2 ingrédients"));
+                            }
+                        },
+                    },
+                ]}>
+                {(fields, { add, remove }, { errors }) => (
                     <>
                         {fields.map(({ key, name, fieldKey, ...restField }) => (
                             <Space key={key} style={{ display: "flex", marginBottom: 8 }} align="baseline">
                                 <Form.Item
                                     {...restField}
+                                    validateTrigger={["onChange", "onBlur"]}
+                                    rules={[
+                                        {
+                                            required: true,
+                                            whitespace: true,
+                                            message: "Cette étape est vide, veuillez la remplir",
+                                        },
+                                    ]}
                                     name={[name, "title"]}
                                     fieldKey={[fieldKey, "title"]}
                                     rules={[{ required: true, message: "Requis" }]}>
@@ -20,18 +38,28 @@ export default function Ingredients({ initValue }) {
                                 </Form.Item>
                                 <Form.Item
                                     {...restField}
+                                    validateTrigger={["onChange", "onBlur"]}
+                                    rules={[
+                                        {
+                                            required: true,
+                                            whitespace: true,
+                                            message: "Cette étape est vide, veuillez la remplir",
+                                        },
+                                    ]}
                                     name={[name, "quantity"]}
                                     fieldKey={[fieldKey, "quantity"]}
                                     rules={[{ required: true, message: "Requis" }]}>
                                     <Input placeholder="Quantité" size="large" />
                                 </Form.Item>
-                                <MinusCircleOutlined onClick={() => remove(name)} />
+                                {key >= 2 ? <MinusCircleOutlined onClick={() => remove(name)} /> : null}
                             </Space>
                         ))}
                         <Form.Item>
-                            <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
+                            <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />} style={{ height: 50 }}>
                                 Ajouter ingrédient
                             </Button>
+
+                            <Form.ErrorList errors={errors} />
                         </Form.Item>
                     </>
                 )}

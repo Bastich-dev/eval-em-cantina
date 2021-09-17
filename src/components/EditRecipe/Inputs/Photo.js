@@ -5,8 +5,8 @@ import Loading from "../../_common/Loading";
 
 import { ArrowUpOutlined } from "@ant-design/icons";
 
-export default function Photo() {
-    const [imageUrl, setimageUrl] = React.useState();
+export default function Photo({ initValue }) {
+    const [imageUrl, setimageUrl] = React.useState(initValue);
     const [value, setvalue] = React.useState("");
 
     const loadImage = () => {

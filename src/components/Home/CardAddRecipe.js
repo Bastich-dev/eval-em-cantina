@@ -1,10 +1,13 @@
 import React from "react";
 import { Card } from "antd";
 import { PlusCircleOutlined } from "@ant-design/icons";
+import { useHistory } from "react-router";
 
 export default function CardAddRecipe() {
+    const history = useHistory();
+
     return (
-        <Card className="cardRecipe" style={styles.card}>
+        <Card className="cardRecipe" style={styles.card} onClick={() => history.push("/new")}>
             <div style={styles.container}>
                 <h3 style={styles.title}>Ajouter ma recette</h3>
                 <PlusCircleOutlined style={styles.icon} />

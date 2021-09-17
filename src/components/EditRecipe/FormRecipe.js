@@ -13,7 +13,8 @@ import { getRecipeFromId, updateRecipe } from "../../utils/API_Cantina";
 import Loading from "../_common/Loading";
 import DeleteButton from "./DeleteButton";
 import { createRecipe } from "../../utils/API_Cantina";
-
+import { toast } from "react-toastify";
+import moment from "moment";
 export default function FormRecipe() {
     const [recipeData, setrecipeData] = useState();
     const isEditInstance = window.location.href.split("/")[3] === "new" ? false : true;
@@ -21,34 +22,50 @@ export default function FormRecipe() {
 
     useEffect(() => {
         if (isEditInstance) {
-            getRecipeFromId({ id }).then(recipeData => setrecipeData(recipeData));
+            getRecipeFromId({ id }).then(data => setrecipeData(data));
+        } else {
+            setrecipeData({
+                description: "",
+                etapes: ["", ""],
+                ingredients: [
+                    ["", ""],
+                    ["", ""],
+                ],
+                niveau: "padawan",
+                personnes: 1,
+                photo: "",
+                tempsPreparation: null,
+                titre: "",
+            });
         }
     }, []);
 
-    const onFinish = (value, allValues) => {
-        let initObject = {
-            description: "",
-            etapes: [],
-            ingredients: [],
-            niveau: "",
-            personnes: 1,
-            photo: "",
-            tempsPreparation: 0,
-            titre: "",
-        };
+    const onFinish = value => {
         // ///// Format data
-        // if (initObject.niveau === undefined) initObject.niveau = "padawan";
-        // initObject.ingredients = initObject.ingredients.map(el => [el[0], el[1]]);
-        // if (id) {
-        //     updateRecipe({ id, data: allValues }).then(res => {
-        //         console.log(res);
-        //     });
-        // } else {
-        //     // createRecipe({data : allValues})
-        // }
-        // console.log(value);
+        let formatedValues = { ...value };
+        formatedValues.ingredients = formatedValues.ingredient.map(el => [el.quantity, el.title]);
+        delete formatedValues.ingredient;
+        formatedValues.tempsPreparation =
+            new Date(formatedValues.tempsPreparations._d).getHours() * 60 + new Date(formatedValues.tempsPreparations._d).getMinutes();
+
+        if (id) {
+            updateRecipe({ id, data: formatedValues })
+                .then(() => {
+                    toast.success("La recette a été modifié avec succès");
+                })
+                .catch(() => {
+                    toast.error("Erreur survenue à la modification de la recette");
+                });
+        } else {
+            createRecipe({ data: formatedValues })
+                .then(() => {
+                    toast.success("La recette a été ajoutée avec succès");
+                })
+                .catch(() => {
+                    toast.error("Erreur survenue à l'ajout de la recette");
+                });
+        }
     };
-    console.log(recipeData);
     return recipeData ? (
         <Form
             onFinish={onFinish}
@@ -74,7 +91,7 @@ export default function FormRecipe() {
                             <Level initValue={recipeData.niveau} />
                         </Col>
                         <Col span={10} className="aside">
-                            <Photo />
+                            <Photo initValue={recipeData.photo} />
                             <Persons initValue={recipeData.personnes} />
                         </Col>
                         <Col span={14} className="formInputs">
@@ -83,12 +100,20 @@ export default function FormRecipe() {
                         <Col span={10} className="aside">
                             <Ingredients initValue={recipeData.ingredients} />
                         </Col>
-                        <Col lg={6} md={12} sm={24}>
-                            <SubmitButton id={id} data={recipeData} />
-                        </Col>
-                        <Col lg={6} md={12} sm={24}>
-                            {id && <DeleteButton id={id} />}
-                        </Col>
+                        {id ? (
+                            <>
+                                <Col lg={6} md={12} sm={24}>
+                                    <SubmitButton id={id} />
+                                </Col>
+                                <Col lg={6} md={12} sm={24}>
+                                    <DeleteButton id={id} />
+                                </Col>
+                            </>
+                        ) : (
+                            <Col lg={12} md={12} sm={24}>
+                                <SubmitButton id={id} />
+                            </Col>
+                        )}
                     </>
                 )}
             </Row>
@@ -98,16 +123,16 @@ export default function FormRecipe() {
     );
 }
 
-// description: "Moelleux au chocolat, coeur coulant et piment d'Espelette";
-// etapes: (3)[
-//     ("Commencez par préparer les moules à gâteau. Précha…210°C (th. 7).Beurrez les moules et réservez-les.",
+// description: "Moelleux au chocolat, coeur coulant et piment d'Espelette",
+// etapes: [
+//     "Commencez par préparer les moules à gâteau. Précha…210°C (th. 7).Beurrez les moules et réservez-les.",
 //     "Faites fondre le chocolat et le beurre au bain-mar…rre-chocolat, le piment d'Espelette et la farine.",
-//     "Enfournez 8 minutes. Servez chaud.")
-// ];
-// id: 9;
-// ingredients: (7)[(Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2))];
-// niveau: "padawan";
-// personnes: 4;
-// photo: "http://localhost:9000/images/chocolate-lava-cake.jpg";
-// tempsPreparation: 10;
-// titre: "Chocolate lava cake";
+//     "Enfournez 8 minutes. Servez chaud."
+// ],
+// id: 9,
+// ingredients: [],
+// niveau: "padawan",
+// personnes: 4,
+// photo: "http://localhost:9000/images/chocolate-lava-cake.jpg",
+// tempsPreparation: 10,
+// titre: "Chocolate lava cake",

@@ -41,13 +41,13 @@ export default function Steps() {
                                         {
                                             required: true,
                                             whitespace: true,
-                                            message: "Cette étape est vide, veuillez la remplir",
+                                            message: "Requis",
                                         },
                                     ]}
                                     noStyle>
-                                    <Input.TextArea rows={3} placeholder={"Etape " + (index + 1)} style={{ width: "90%" }} />
+                                    <Input.TextArea rows={5} placeholder={"Etape " + (index + 1)} style={{ width: "90%" }} />
                                 </Form.Item>
-                                {fields.length > 1 ? <MinusCircleOutlined style={{ marginLeft: 5 }} onClick={() => remove(field.name)} /> : null}
+                                {index >= 2 ? <MinusCircleOutlined style={{ marginLeft: 5 }} onClick={() => remove(field.name)} /> : null}
                             </Form.Item>
                         ))}
                         <Form.Item>
