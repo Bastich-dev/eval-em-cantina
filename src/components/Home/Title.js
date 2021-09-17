@@ -8,15 +8,16 @@ export default function Title() {
                 <div>
                     <span className="title">Le retour du jet d'ail</span>
                     <span className="description">
-                        De Harry Potter à Star Wars, en passant par Dragon Ball, un hommage gastronomique à des références cultes et une série
-                        d'énigmes pour tester vos connaissances geek.
+                        Si vous voulez prolonger l'ambiance Star Wars ou tout simplement avoir de quoi grignoter pendant les films, vous trouverez de
+                        quoi vous inspirer grâce à nos recettes !
                     </span>
                 </div>
             </div>
 
             <div className="text-bottom">
                 <div className="description">
-                    <p>Ajouter, publier et partager votre recette très simplement en deux clics !</p>
+                    <strong>" Rejoins le côté obscur de la cuisine "</strong>
+                    <p>Ajouter, publier et partager vos recettes préférées très simplement en quelques clics !</p>
                     <section style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: 30 }}>
                         <button className="raise">Créer ma recette</button>
                     </section>

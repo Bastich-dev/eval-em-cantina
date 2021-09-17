@@ -3,9 +3,11 @@ import { Row, Col } from "antd";
 import Title from "../components/Home/Title";
 import CardRecipe from "../components/Home/CardRecipe";
 import CardAddRecipe from "../components/Home/CardAddRecipe";
-
+import Animation from "../components/Home/Animation";
 import { getListAllRecipes } from "../utils/API_Cantina";
 import FormSearch from "../components/Home/FormSearch";
+import Loading from "../components/_common/Loading";
+import "../css/home.css";
 
 export default function Home() {
     //// ANIMATIONS
@@ -83,14 +85,17 @@ export default function Home() {
                 setListRecipesInit(recipes);
                 setListRecipes(recipes);
                 console.log(recipes);
-            }, 2500);
+            }, 2800);
         });
     }, []);
 
     useEffect(() => {
-        setListRecipes(
-            listRecipesInit?.filter(e => compareSearch(e) && comparePersons(e) && compareTime(e) && compareIngredients(e) && compareLevel(e))
-        );
+        setListRecipes();
+        setTimeout(() => {
+            setListRecipes(
+                listRecipesInit?.filter(e => compareSearch(e) && comparePersons(e) && compareTime(e) && compareIngredients(e) && compareLevel(e))
+            );
+        }, 1000);
     }, [searchInput, listRecipesInit]);
 
     return (
@@ -99,9 +104,11 @@ export default function Home() {
                 <Title />
             </Col>
             <Col offset={1} md={8} sm={24} style={styles.col}>
-                {/* <Animation /> */}
-                <p style={styles.description}>Je souhaite cuisiner :</p>
-                <FormSearch searchInput={searchInput} setSearchInput={setSearchInput} />
+                <Animation />
+                <div style={styles.containForm}>
+                    <p style={styles.description}>Je souhaiterai cuisiner :</p>
+                    <FormSearch searchInput={searchInput} setSearchInput={setSearchInput} />
+                </div>
             </Col>
             <Col span={18}>
                 <Row gutter={[36, 36]}>
@@ -118,18 +125,8 @@ export default function Home() {
                             </Col>
                         </>
                     ) : (
-                        <Col span={24} className="center">
-                            <div class="breeding-rhombus-spinner">
-                                <div class="rhombus child-1"></div>
-                                <div class="rhombus child-2"></div>
-                                <div class="rhombus child-3"></div>
-                                <div class="rhombus child-4"></div>
-                                <div class="rhombus child-5"></div>
-                                <div class="rhombus child-6"></div>
-                                <div class="rhombus child-7"></div>
-                                <div class="rhombus child-8"></div>
-                                <div class="rhombus big"></div>
-                            </div>
+                        <Col span={24}>
+                            <Loading />
                         </Col>
                     )}
                 </Row>
@@ -140,7 +137,7 @@ export default function Home() {
 
 const styles = {
     row: {
-        height: "67vh",
+        height: "65vh",
     },
     col: {
         height: "100%",
@@ -148,6 +145,14 @@ const styles = {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        marginBottom: 40,
+    },
+    containForm: {
+        backgroundColor: "white",
+        zIndex: 999,
+        border: "3px solid var(--primary-bg-color)",
+        borderRadius: 10,
+        padding: 20,
     },
     title: {
         fontSize: "36px",
@@ -155,6 +160,9 @@ const styles = {
     },
     description: {
         textAlign: "center",
+        fontSize: 20,
+        color: "var(--primary-bg-color)",
+        fontWeigth: "bold",
     },
     backToTop: {
         backgroundColor: "green",

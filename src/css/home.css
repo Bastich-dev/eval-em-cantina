@@ -133,3 +133,24 @@
         transform: scale(0.5);
     }
 }
+
+/* //////////////////////////////////// GARLIC ANIMATION */
+
+.garlicAnimation {
+    animation: floatgarlic 6s infinite;
+}
+
+@keyframes floatgarlic {
+    0% {
+        transform: rotate(5deg);
+        top: 15px;
+    }
+    50% {
+        transform: rotate(-5deg);
+        top: 0px;
+    }
+    100% {
+        transform: rotate(5deg);
+        top: 15px;
+    }
+}

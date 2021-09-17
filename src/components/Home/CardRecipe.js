@@ -34,7 +34,7 @@ export default function CardRecipe({ data }) {
 
     const goToRecipe = () => {
         // setTimeout(() => {
-        history.push("/recette/new");
+        history.push("/edit/" + data.id);
         // }, 1500);
     };
 
