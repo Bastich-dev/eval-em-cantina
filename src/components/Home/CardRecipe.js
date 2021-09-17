@@ -43,7 +43,20 @@ export default function CardRecipe({ data }) {
             onClick={goToRecipe}
             className="cardRecipe"
             style={styles.card}
-            cover={<img style={{ height: 150, objectFit: "cover" }} alt={data.titre} src={data.photo} />}>
+            cover={
+                <img
+                    style={{
+                        height: 150,
+                        objectFit: "cover",
+                        backgroundImage: 'url("http://beepeers.com/assets/images/commerces/default-image.jpg")',
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                    }}
+                    alt={data.titre}
+                    src={data.photo}
+                />
+            }>
             <div style={styles.container}>
                 <div style={styles.title}>{data.titre}</div>
                 <div style={styles.description}> {data.description} </div>

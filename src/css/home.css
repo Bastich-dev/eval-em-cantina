@@ -142,15 +142,28 @@
 
 @keyframes floatgarlic {
     0% {
-        transform: rotate(5deg);
-        top: 15px;
+        transform: rotate(10deg);
+        top: 25px;
+        left: 150px;
+    }
+    25% {
+        transform: rotate(-10deg);
+        top: 0px;
+        left: 0px;
     }
     50% {
-        transform: rotate(-5deg);
+        transform: rotate(10deg);
+        top: 25px;
+        left: 75px;
+    }
+    75% {
+        transform: rotate(10deg);
         top: 0px;
+        left: 170px;
     }
     100% {
-        transform: rotate(5deg);
-        top: 15px;
+        transform: rotate(10deg);
+        top: 25px;
+        left: 150px;
     }
 }

@@ -33,7 +33,7 @@ export default function Steps() {
                 {(fields, { add, remove }, { errors }) => (
                     <>
                         {fields.map((field, index) => (
-                            <Form.Item {...formItemLayout} required={false} key={field.key}>
+                            <Form.Item required={false} key={field.key} style={{ width: "100%" }}>
                                 <Form.Item
                                     {...field}
                                     validateTrigger={["onChange", "onBlur"]}
@@ -45,13 +45,13 @@ export default function Steps() {
                                         },
                                     ]}
                                     noStyle>
-                                    <Input.TextArea rows={5} placeholder={"Etape " + (index + 1)} style={{ width: "90%" }} />
+                                    <Input.TextArea rows={5} placeholder={"Etape " + (index + 1)} style={{ width: "95%" }} />
                                 </Form.Item>
                                 {index >= 2 ? <MinusCircleOutlined style={{ marginLeft: 5 }} onClick={() => remove(field.name)} /> : null}
                             </Form.Item>
                         ))}
                         <Form.Item>
-                            <Button onClick={() => add()} style={{ width: "90%", height: 50 }} icon={<PlusOutlined />}>
+                            <Button onClick={() => add()} style={{ width: "95%", height: 50 }} icon={<PlusOutlined />}>
                                 Ajouter étape
                             </Button>
 

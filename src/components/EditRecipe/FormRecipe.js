@@ -45,8 +45,23 @@ export default function FormRecipe() {
         let formatedValues = { ...value };
         formatedValues.ingredients = formatedValues.ingredient.map(el => [el.quantity, el.title]);
         delete formatedValues.ingredient;
-        formatedValues.tempsPreparation =
-            new Date(formatedValues.tempsPreparations._d).getHours() * 60 + new Date(formatedValues.tempsPreparations._d).getMinutes();
+
+        // if(formatedValues.niveau === 1)formatedValues.niveau = 'padawan'
+
+        // function getLevel() {
+        //     switch (initValue) {
+        //         case "padawan":
+        //             return 1;
+        //         case "jedi":
+        //             return 2;
+        //         case "maitre":
+        //             return 3;
+        //     }
+        // }
+        if (formatedValues?.tempsPreparations?._d) {
+            formatedValues.tempsPreparation =
+                new Date(formatedValues.tempsPreparations._d).getHours() * 60 + new Date(formatedValues.tempsPreparations._d).getMinutes();
+        } else delete formatedValues.tempsPreparation;
 
         if (id) {
             updateRecipe({ id, data: formatedValues })

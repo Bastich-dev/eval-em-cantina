@@ -24,7 +24,7 @@ const styles = {
         margin: "0 20px",
     },
     title: {
-        fontSize: 26,
+        fontSize: 32,
         color: "var(--primary-bg-color)",
         margin: 0,
         padding: 0,

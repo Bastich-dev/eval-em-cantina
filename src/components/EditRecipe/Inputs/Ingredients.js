@@ -24,32 +24,17 @@ export default function Ingredients({ initValue }) {
                                 <Form.Item
                                     {...restField}
                                     validateTrigger={["onChange", "onBlur"]}
-                                    rules={[
-                                        {
-                                            required: true,
-                                            whitespace: true,
-                                            message: "Cette étape est vide, veuillez la remplir",
-                                        },
-                                    ]}
-                                    name={[name, "title"]}
-                                    fieldKey={[fieldKey, "title"]}
-                                    rules={[{ required: true, message: "Requis" }]}>
-                                    <Input placeholder="Ingrédient" size="large" />
+                                    name={[name, "quantity"]}
+                                    fieldKey={[fieldKey, "quantity"]}>
+                                    <Input placeholder="Quantité" size="large" />
                                 </Form.Item>
                                 <Form.Item
                                     {...restField}
                                     validateTrigger={["onChange", "onBlur"]}
-                                    rules={[
-                                        {
-                                            required: true,
-                                            whitespace: true,
-                                            message: "Cette étape est vide, veuillez la remplir",
-                                        },
-                                    ]}
-                                    name={[name, "quantity"]}
-                                    fieldKey={[fieldKey, "quantity"]}
+                                    name={[name, "title"]}
+                                    fieldKey={[fieldKey, "title"]}
                                     rules={[{ required: true, message: "Requis" }]}>
-                                    <Input placeholder="Quantité" size="large" />
+                                    <Input placeholder="Ingrédient" size="large" />
                                 </Form.Item>
                                 {key >= 2 ? <MinusCircleOutlined onClick={() => remove(name)} /> : null}
                             </Space>

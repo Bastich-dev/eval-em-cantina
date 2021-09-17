@@ -6,19 +6,19 @@ import ImageJedi from "../../../media/img/jedi.jpg";
 import ImageMaitre from "../../../media/img/maitre.png";
 
 export default function Level({ initValue }) {
-    function getLevel() {
-        switch (initValue) {
-            case "padawan":
-                return 1;
-            case "jedi":
-                return 2;
-            case "maitre":
-                return 3;
-        }
-    }
-    const level = getLevel();
+    // function getLevel() {
+    //     switch (initValue) {
+    //         case "padawan":
+    //             return 1;
+    //         case "jedi":
+    //             return 2;
+    //         case "maitre":
+    //             return 3;
+    //     }
+    // }
+    // const level = getLevel();
 
-    const [value, setValue] = React.useState(level);
+    const [value, setValue] = React.useState(initValue);
 
     const onChange = e => {
         console.log("radio checked", e.target.value);
@@ -30,19 +30,22 @@ export default function Level({ initValue }) {
             <h2> Niveau de maîtrise :</h2>
             <Form.Item name="niveau">
                 <Radio.Group onChange={onChange} value={value} style={styles.container}>
-                    <label className={value === 1 && "levelActive"}>
+                    <label className={value === "padawan" && "levelActive"}>
+                        {value === "padawan" && <div style={styles.shadow}></div>}
                         <div style={{ ...styles.radio, ...styles.padawan }}></div>
-                        <Radio value={1} style={{ display: "none" }} />
+                        <Radio value={"padawan"} style={{ display: "none" }} />
                         <div style={styles.text}>Padawan</div>
                     </label>
-                    <label className={value === 2 && "levelActive"}>
+                    <label className={value === "jedi" && "levelActive"}>
+                        {value === "jedi" && <div style={styles.shadow}></div>}
                         <div style={{ ...styles.radio, ...styles.jedi }}></div>
-                        <Radio value={2} style={{ display: "none" }} />
+                        <Radio value={"jedi"} style={{ display: "none" }} />
                         <div style={styles.text}>Jedi</div>
                     </label>
-                    <label className={value === 3 && "levelActive"}>
+                    <label className={value === "maitre" && "levelActive"}>
+                        {value === "maitre" && <div style={styles.shadow}></div>}
                         <div style={{ ...styles.radio, ...styles.maitre }}></div>
-                        <Radio value={3} style={{ display: "none" }} />
+                        <Radio value={"maitre"} style={{ display: "none" }} />
                         <div style={styles.text}>Maitre</div>
                     </label>
                 </Radio.Group>
@@ -53,6 +56,14 @@ export default function Level({ initValue }) {
 
 const sizeIcons = 120;
 const styles = {
+    shadow: {
+        boxShadow: "0px 5px 48px 33px rgba(56, 167, 0,0.89)",
+        width: 15,
+        height: 15,
+        position: "absolute",
+        top: sizeIcons / 2 - 15 / 2,
+        left: sizeIcons / 2 - 15 / 2,
+    },
     container: {
         height: sizeIcons,
         display: "flex",
