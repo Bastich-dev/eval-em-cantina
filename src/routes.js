@@ -13,7 +13,7 @@ export default [
         path: "/recette/",
         name: "Voir une recette",
         component: ViewRecipe,
-        exact: true,
+        exact: false,
     },
     {
         path: "/new",

@@ -32,13 +32,16 @@ export default function Photo({ initValue }) {
                 <Input
                     addonBefore="http://"
                     value={value}
-                    onChange={e => setvalue(e.target.value)}
+                    onChange={e => {
+                        if (e.target.value === "") setimageUrl("");
+                        setvalue(e.target.value);
+                    }}
                     onBlur={loadImage}
                     addonAfter={<span style={{ cursor: "pointer" }}>Vérifier image</span>}
                 />
             </Form.Item>
             <div style={{ ...styles.preview }}>
-                {imageUrl === undefined && (
+                {imageUrl === "" && (
                     <div className="center" style={{ flexDirection: "column" }}>
                         <ArrowUpOutlined style={{ fontSize: 30, color: "silver" }} />
                         <span style={styles.previewText}>Veuillez insérer un lien d'image</span>

@@ -14,11 +14,9 @@ import Loading from "../_common/Loading";
 import DeleteButton from "./DeleteButton";
 import { createRecipe } from "../../utils/API_Cantina";
 import { toast } from "react-toastify";
-import moment from "moment";
-export default function FormRecipe() {
+
+export default function FormRecipe({ id, isEditInstance }) {
     const [recipeData, setrecipeData] = useState();
-    const isEditInstance = window.location.href.split("/")[3] === "new" ? false : true;
-    const id = isEditInstance ? window.location.href.split("/")[4] : null;
 
     useEffect(() => {
         if (isEditInstance) {
@@ -45,19 +43,6 @@ export default function FormRecipe() {
         let formatedValues = { ...value };
         formatedValues.ingredients = formatedValues.ingredient.map(el => [el.quantity, el.title]);
         delete formatedValues.ingredient;
-
-        // if(formatedValues.niveau === 1)formatedValues.niveau = 'padawan'
-
-        // function getLevel() {
-        //     switch (initValue) {
-        //         case "padawan":
-        //             return 1;
-        //         case "jedi":
-        //             return 2;
-        //         case "maitre":
-        //             return 3;
-        //     }
-        // }
         if (formatedValues?.tempsPreparations?._d) {
             formatedValues.tempsPreparation =
                 new Date(formatedValues.tempsPreparations._d).getHours() * 60 + new Date(formatedValues.tempsPreparations._d).getMinutes();
@@ -96,7 +81,6 @@ export default function FormRecipe() {
                         <Loading />
                     </Col>
                 )}
-
                 {recipeData && (
                     <>
                         <Col span={14} className="formInputs">
@@ -134,20 +118,8 @@ export default function FormRecipe() {
             </Row>
         </Form>
     ) : (
-        <></>
+        <div style={{ width: "100%", height: "50vh" }}>
+            <Loading />
+        </div>
     );
 }
-
-// description: "Moelleux au chocolat, coeur coulant et piment d'Espelette",
-// etapes: [
-//     "Commencez par préparer les moules à gâteau. Précha…210°C (th. 7).Beurrez les moules et réservez-les.",
-//     "Faites fondre le chocolat et le beurre au bain-mar…rre-chocolat, le piment d'Espelette et la farine.",
-//     "Enfournez 8 minutes. Servez chaud."
-// ],
-// id: 9,
-// ingredients: [],
-// niveau: "padawan",
-// personnes: 4,
-// photo: "http://localhost:9000/images/chocolate-lava-cake.jpg",
-// tempsPreparation: 10,
-// titre: "Chocolate lava cake",
