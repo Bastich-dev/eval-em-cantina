@@ -1,23 +1,10 @@
-import React from "react";
-
 import { Form, Radio } from "antd";
-import ImagePadawan from "../../../media/img/padawan.png";
+import React from "react";
 import ImageJedi from "../../../media/img/jedi.jpg";
 import ImageMaitre from "../../../media/img/maitre.png";
+import ImagePadawan from "../../../media/img/padawan.png";
 
 export default function Level({ initValue }) {
-    // function getLevel() {
-    //     switch (initValue) {
-    //         case "padawan":
-    //             return 1;
-    //         case "jedi":
-    //             return 2;
-    //         case "maitre":
-    //             return 3;
-    //     }
-    // }
-    // const level = getLevel();
-
     const [value, setValue] = React.useState(initValue);
 
     const onChange = e => {

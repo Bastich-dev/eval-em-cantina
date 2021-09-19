@@ -1,12 +1,12 @@
 import React from "react";
-import VadorImage from "../../media/img/vador.png";
 import GarlicImage from "../../media/img/garlic2.png";
+import VadorImage from "../../media/img/vador.png";
 
 export default function Animation() {
     return (
         <div>
-            <img src={GarlicImage} style={styles.garlic} className="garlicAnimation" />
-            <img src={VadorImage} style={styles.vador} />
+            <img src={GarlicImage} style={styles.garlic} alt="garlic" className="garlicAnimation" />
+            <img src={VadorImage} style={styles.vador} alt="vador" />
         </div>
     );
 }

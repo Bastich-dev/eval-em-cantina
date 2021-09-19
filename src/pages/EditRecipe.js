@@ -1,10 +1,8 @@
+import { Col, Row } from "antd";
 import React from "react";
-import { Row, Col, Form } from "antd";
-
-import { ArrowLeftOutlined, MinusOutlined } from "@ant-design/icons";
+import FormRecipe from "../components/EditRecipe/FormRecipe";
 import ReturnPage from "../components/_common/ReturnPage";
 import "../css/recipe.css";
-import FormRecipe from "../components/EditRecipe/FormRecipe";
 
 export default function AddRecipe() {
     const isEditInstance = window.location.href.split("/")[3] === "new" ? false : true;

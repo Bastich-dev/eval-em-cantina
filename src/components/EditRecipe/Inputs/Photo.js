@@ -1,9 +1,7 @@
-import React from "react";
-
-import { Form, Input, Button } from "antd";
-import Loading from "../../_common/Loading";
-
 import { ArrowUpOutlined } from "@ant-design/icons";
+import { Form, Input } from "antd";
+import React from "react";
+import Loading from "../../_common/Loading";
 
 export default function Photo({ initValue }) {
     const [imageUrl, setimageUrl] = React.useState(initValue);
@@ -48,7 +46,7 @@ export default function Photo({ initValue }) {
                     </div>
                 )}
                 {imageUrl === null && <Loading />}
-                {imageUrl && <img src={imageUrl} style={styles.img} alt="Lien d'image erroné" />}
+                {imageUrl && <img src={imageUrl} style={styles.img} alt="Lien erroné" />}
             </div>
         </React.Fragment>
     );

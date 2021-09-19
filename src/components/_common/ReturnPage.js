@@ -1,5 +1,5 @@
-import React from "react";
 import { ArrowLeftOutlined, MinusOutlined } from "@ant-design/icons";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 export default function ReturnPage() {

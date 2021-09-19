@@ -1,8 +1,8 @@
-import React from "react";
-import { Form, Input, Button, Space } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
+import { Button, Form, Input, Space } from "antd";
+import React from "react";
 
-export default function Ingredients({ initValue }) {
+export default function Ingredients() {
     return (
         <React.Fragment>
             <h2>Ingrédients</h2>
@@ -52,12 +52,3 @@ export default function Ingredients({ initValue }) {
         </React.Fragment>
     );
 }
-
-const styles = {
-    input: {
-        borderRadius: 5,
-        width: "100%",
-        maxWidth: "100%",
-        height: 50,
-    },
-};

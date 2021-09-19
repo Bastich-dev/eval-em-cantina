@@ -1,14 +1,14 @@
+import { Col, Row } from "antd";
 import React, { useEffect, useState } from "react";
-import { Row, Col } from "antd";
-import Title from "../components/Home/Title";
-import CardRecipe from "../components/Home/CardRecipe";
-import CardAddRecipe from "../components/Home/CardAddRecipe";
 import Animation from "../components/Home/Animation";
-import { getListAllRecipes } from "../utils/API_Cantina";
+import CardAddRecipe from "../components/Home/CardAddRecipe";
+import CardRecipe from "../components/Home/CardRecipe";
+import { compareIngredients, compareLevel, comparePersons, compareSearch, compareTime } from "../components/Home/compareFunctions";
 import FormSearch from "../components/Home/FormSearch";
+import Title from "../components/Home/Title";
 import Loading from "../components/_common/Loading";
-import { compareIngredients, compareSearch, comparePersons, compareTime, compareLevel } from "../components/Home/compareFunctions";
 import "../css/home.css";
+import { getListAllRecipes } from "../utils/API_Cantina";
 
 export default function Home() {
     /////////// RECIPE LIST

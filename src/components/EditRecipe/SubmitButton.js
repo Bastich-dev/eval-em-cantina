@@ -1,9 +1,7 @@
+import { Button } from "antd";
 import React from "react";
 
-import { Button, Form, Input } from "antd";
-export default function SubmitButton({ id }) {
-    const [loading, setloading] = React.useState(false);
-
+export default function SubmitButton({ id, loading }) {
     return (
         <Button style={styles.button} type="primary" size="large" loading={loading} htmlType="submit">
             {id ? "Sauvegarder modifications" : "Ajouter recette"}

@@ -1,6 +1,6 @@
-import React from "react";
-import { BackTop } from "antd";
 import { DoubleRightOutlined } from "@ant-design/icons";
+import { BackTop } from "antd";
+import React from "react";
 
 export default function ScrollToTop() {
     return (

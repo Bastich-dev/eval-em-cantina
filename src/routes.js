@@ -1,8 +1,8 @@
-import Home from "./pages/Home";
 import EditRecipe from "./pages/EditRecipe";
+import Home from "./pages/Home";
 import ViewRecipe from "./pages/ViewRecipe";
 
-export default [
+const routes = [
     {
         path: "/",
         name: "Liste des recettes",
@@ -28,3 +28,5 @@ export default [
         exact: false,
     },
 ];
+
+export default routes;

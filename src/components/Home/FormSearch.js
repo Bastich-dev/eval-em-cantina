@@ -1,6 +1,5 @@
+import { Col, Input, Row, Select } from "antd";
 import React from "react";
-import { Row, Col, Select } from "antd";
-import { Input } from "antd";
 
 const { Option } = Select;
 

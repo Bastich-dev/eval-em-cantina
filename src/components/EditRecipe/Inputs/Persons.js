@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-
+import { UserAddOutlined, UserOutlined } from "@ant-design/icons";
 import { Form, Rate } from "antd";
-import { UserOutlined, UserAddOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
 
 export default function Persons({ initValue }) {
     const [activeRate, setActiveRate] = useState(initValue);

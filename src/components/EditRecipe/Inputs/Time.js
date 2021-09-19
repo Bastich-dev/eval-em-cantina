@@ -1,7 +1,6 @@
-import React from "react";
-
-import { Form, Input, TimePicker } from "antd";
+import { Form, TimePicker } from "antd";
 import moment from "moment";
+import React from "react";
 
 export default function Time({ initValue }) {
     const [firstView, setfirstView] = React.useState(Boolean(!initValue));

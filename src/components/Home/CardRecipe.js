@@ -1,6 +1,6 @@
-import React from "react";
-import { Card } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { Card } from "antd";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import HeartSvg from "../../media/img/heart.svg";
 

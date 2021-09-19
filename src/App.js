@@ -1,17 +1,14 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import routes from "./routes";
-
 import "antd/dist/antd.css";
-import "./css/antdTheme.css";
-import "./App.css";
-import "./css/common.css";
-
-import Header from "./components/_common/Header";
-import ScrollToTop from "./components/_common/ScrollToTop";
-
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import Header from "./components/_common/Header";
+import ScrollToTop from "./components/_common/ScrollToTop";
+import "./css/antdTheme.css";
+import "./css/common.css";
+import routes from "./routes";
 
 export default function App() {
     return (

@@ -1,18 +1,6 @@
-import React from "react";
-
-import { Form, Input, Button } from "antd";
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
-
-const formItemLayout = {
-    labelCol: {
-        xs: { span: 24 },
-        sm: { span: 4 },
-    },
-    wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 20 },
-    },
-};
+import { Button, Form, Input } from "antd";
+import React from "react";
 
 export default function Steps() {
     return (

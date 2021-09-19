@@ -1,10 +1,7 @@
+import { Col, Row } from "antd";
 import React from "react";
-import { Row, Col, Form } from "antd";
-
-import { ArrowLeftOutlined, MinusOutlined } from "@ant-design/icons";
 import ReturnPage from "../components/_common/ReturnPage";
 import "../css/recipe.css";
-import FormRecipe from "../components/EditRecipe/FormRecipe";
 
 export default function AddRecipe() {
     const id = window.location.href.split("/")[4];
@@ -12,6 +9,7 @@ export default function AddRecipe() {
     return (
         <Row>
             <Col span={20} offset={2} style={styles.row}>
+                <div></div>
                 <ReturnPage />
                 <h1 style={styles.title}>{id ? "Modifier" : "Ajouter"} une recette</h1>
             </Col>

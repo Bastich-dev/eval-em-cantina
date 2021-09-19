@@ -1,6 +1,6 @@
-import React from "react";
-import { Card } from "antd";
 import { PlusCircleOutlined } from "@ant-design/icons";
+import { Card } from "antd";
+import React from "react";
 import { useHistory } from "react-router";
 
 export default function CardAddRecipe() {
