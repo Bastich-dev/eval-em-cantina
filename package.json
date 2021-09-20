@@ -34,17 +34,13 @@
     "react-router-dom": "5.3.0",
     "react-scripts": "^4.0.3",
     "react-toastify": "^8.0.2",
-    "style-loader": "^3.2.1",
-    "webpack": "4.42.0",
-        "webpack-cli": "^4.8.0",
-    "webpack-git-hash": "^1.0.2"
+    "style-loader": "^3.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "webpack": "webpack --mode production"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
