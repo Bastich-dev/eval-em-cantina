@@ -1,5 +1,7 @@
 # Projet : Eval-Final-EM-Aout-2021---Cantina // Cook & Retry
 
+## Url de visualisation : https://cantina-starwars.vercel.app/
+
 -   #### 01. [Description](#01)
 -   #### 02. [Stack utilisée](#02)
     -   ##### [Stack](#02-1)
@@ -8,10 +10,10 @@
     -   ##### [Utilitaires](#03-1)
     -   ##### [Configuration](#03-2)
 -   #### 04. [Parcours utilisateur / Features](#04)
-
-<!-- "
     -   ##### [Accès à l'application](#04-1)
     -   ##### [Pages](#04-2)
+
+<!-- "
         -   ##### [Application principale](#04-2-1)
 -   #### 05. [Détails techniques](#05)
     -   ##### [Design](#05-1)
