@@ -12,7 +12,7 @@ export default function Steps() {
                 rules={[
                     {
                         validator: async (_, steps) => {
-                            if (!steps || steps.length < 2) {
+                            if (!steps || steps.length < 1) {
                                 return Promise.reject(new Error("Il faut au moins 2 étapes"));
                             }
                         },
@@ -35,7 +35,7 @@ export default function Steps() {
                                     noStyle>
                                     <Input.TextArea rows={5} placeholder={"Etape " + (index + 1)} style={{ width: "95%" }} />
                                 </Form.Item>
-                                {index >= 2 ? <MinusCircleOutlined style={{ marginLeft: 5 }} onClick={() => remove(field.name)} /> : null}
+                                {index >= 1 ? <MinusCircleOutlined style={{ marginLeft: 5 }} onClick={() => remove(field.name)} /> : null}
                             </Form.Item>
                         ))}
                         <Form.Item>

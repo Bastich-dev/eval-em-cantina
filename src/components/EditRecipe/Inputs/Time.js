@@ -1,32 +1,19 @@
 import { Form, TimePicker } from "antd";
-import moment from "moment";
 import React from "react";
 
-export default function Time({ initValue }) {
-    const [firstView, setfirstView] = React.useState(Boolean(!initValue));
-
+export default function Time() {
     return (
         <>
             <h2>Temps de préparation :</h2>
             <Form.Item
-                name="tempsPreparations"
+                name="tempsPreparation"
                 rules={[
                     {
-                        required: firstView,
+                        required: true,
                         message: "Requis",
                     },
                 ]}>
-                <TimePicker
-                    defaultValue={moment(moment.utc().startOf("day").add({ minutes: initValue }).format("HH:mm:ss"), "HH:mm:ss")}
-                    onChange={e => {
-                        if (e === null) setfirstView(true);
-                        else setfirstView(false);
-                    }}
-                    showNow={false}
-                    size="large"
-                    style={styles.input}
-                    placeholder="00h 00min 00sec"
-                />
+                <TimePicker showNow={false} size="large" style={styles.input} placeholder="00h 00min 00sec" />
             </Form.Item>
         </>
     );

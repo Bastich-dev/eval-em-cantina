@@ -11,7 +11,7 @@ export default function Ingredients() {
                 rules={[
                     {
                         validator: async (_, items) => {
-                            if (!items || items.length < 2) {
+                            if (!items || items.length < 1) {
                                 return Promise.reject(new Error("Il faut au moins 2 ingrédients"));
                             }
                         },
@@ -36,7 +36,7 @@ export default function Ingredients() {
                                     rules={[{ required: true, message: "Requis" }]}>
                                     <Input placeholder="Ingrédient" size="large" />
                                 </Form.Item>
-                                {key >= 2 ? <MinusCircleOutlined onClick={() => remove(name)} /> : null}
+                                {key >= 1 ? <MinusCircleOutlined onClick={() => remove(name)} /> : null}
                             </Space>
                         ))}
                         <Form.Item>

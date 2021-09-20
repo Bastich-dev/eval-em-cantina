@@ -5,11 +5,8 @@ const { Option } = Select;
 
 export default function FormSearch({ searchInput, setSearchInput }) {
     const properties = {
-        optionFilterProp: "children",
         allowClear: true,
-        filterOption: (input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0,
         size: "large",
-        showSearch: true,
         style: styles.input,
     };
 
@@ -44,18 +41,16 @@ export default function FormSearch({ searchInput, setSearchInput }) {
                 </Select>
             </Col>
             <Col span={12}>
-                <Select
+                <Input
                     {...properties}
                     value={searchInput.persons}
-                    onChange={e => setSearchInput({ ...searchInput, persons: e })}
-                    placeholder="Pour combien de personnes">
-                    <Option value={1}>1 personne</Option>
-                    <Option value={2}>2 personnes</Option>
-                    <Option value={3}>3 personnes</Option>
-                    <Option value={4}>4 personnes</Option>
-                    <Option value={5}>5 personnes</Option>
-                    <Option value={6}>6 ou + personnes</Option>
-                </Select>
+                    onChange={e => {
+                        if (+e.target.value > 0) setSearchInput({ ...searchInput, persons: +e.target.value });
+                        if (!e.target.value) setSearchInput({ ...searchInput, persons: e.target.value });
+                    }}
+                    placeholder="Pour combien de personnes"
+                    type="number"
+                />
             </Col>
             <Col span={12}>
                 <Select

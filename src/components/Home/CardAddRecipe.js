@@ -7,7 +7,7 @@ export default function CardAddRecipe() {
     const history = useHistory();
 
     return (
-        <Card className="cardRecipe" style={styles.card} onClick={() => history.push("/new")}>
+        <Card hoverable className="cardRecipe" style={styles.card} onClick={() => history.push("/new")}>
             <div style={styles.container}>
                 <h3 style={styles.title}>Ajouter ma recette</h3>
                 <PlusCircleOutlined style={styles.icon} />

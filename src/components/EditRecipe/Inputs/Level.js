@@ -17,19 +17,19 @@ export default function Level({ initValue }) {
             <h2> Niveau de maîtrise :</h2>
             <Form.Item name="niveau">
                 <Radio.Group onChange={onChange} value={value} style={styles.container}>
-                    <label className={value === "padawan" && "levelActive"}>
+                    <label className={value === "padawan" ? "levelActive" : ""}>
                         {value === "padawan" && <div style={styles.shadow}></div>}
                         <div style={{ ...styles.radio, ...styles.padawan }}></div>
                         <Radio value={"padawan"} style={{ display: "none" }} />
                         <div style={styles.text}>Padawan</div>
                     </label>
-                    <label className={value === "jedi" && "levelActive"}>
+                    <label className={value === "jedi" ? "levelActive" : ""}>
                         {value === "jedi" && <div style={styles.shadow}></div>}
                         <div style={{ ...styles.radio, ...styles.jedi }}></div>
                         <Radio value={"jedi"} style={{ display: "none" }} />
                         <div style={styles.text}>Jedi</div>
                     </label>
-                    <label className={value === "maitre" && "levelActive"}>
+                    <label className={value === "maitre" ? "levelActive" : ""}>
                         {value === "maitre" && <div style={styles.shadow}></div>}
                         <div style={{ ...styles.radio, ...styles.maitre }}></div>
                         <Radio value={"maitre"} style={{ display: "none" }} />

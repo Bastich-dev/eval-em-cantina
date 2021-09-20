@@ -1,0 +1,46 @@
+.invisible {
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: fadein 1.5s ease;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeOut {
+    animation: fadeout 1.5s ease;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fadeLeftOut {
+    position: relative;
+    animation: fadeLeftOut 0.5s linear;
+    opacity: 0;
+}
+
+@keyframes fadeLeftOut {
+    0% {
+        left: 0px;
+        opacity: 1;
+    }
+    100% {
+        left: 50px;
+        opacity: 0;
+    }
+}

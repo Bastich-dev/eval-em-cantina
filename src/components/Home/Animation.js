@@ -3,11 +3,16 @@ import GarlicImage from "../../media/img/garlic2.png";
 import VadorImage from "../../media/img/vador.png";
 
 export default function Animation() {
+    const isMobile = window.innerWidth < 500;
+
+    console.log(window.innerWidth);
     return (
-        <div>
-            <img src={GarlicImage} style={styles.garlic} alt="garlic" className="garlicAnimation" />
-            <img src={VadorImage} style={styles.vador} alt="vador" />
-        </div>
+        !isMobile && (
+            <div>
+                <img src={GarlicImage} style={styles.garlic} alt="garlic" className="garlicAnimation" />
+                <img src={VadorImage} style={styles.vador} alt="vador" />
+            </div>
+        )
     );
 }
 

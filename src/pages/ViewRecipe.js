@@ -1,19 +1,47 @@
 import { Col, Row } from "antd";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReturnPage from "../components/_common/ReturnPage";
 import "../css/recipe.css";
+import CardRecipe from "../components/ViewRecipe/CardRecipe";
+
+import { getRecipeFromId } from "../utils/API_Cantina";
 
 export default function AddRecipe() {
     const id = window.location.href.split("/")[4];
 
+    const [recipeData, setrecipeData] = useState();
+    useEffect(() => {
+        getRecipeFromId({ id }).then(data => setrecipeData(data));
+    }, [id]);
+
+    const [fadeHandler, setFadeHandler] = useState(false);
+
     return (
-        <Row>
-            <Col span={20} offset={2} style={styles.row}>
-                <div></div>
-                <ReturnPage />
-                <h1 style={styles.title}>{id ? "Modifier" : "Ajouter"} une recette</h1>
+        <Row align="top" id="viewRecipe">
+            <Col
+                lg={{
+                    span: 2,
+                    offset: 2,
+                }}
+                md={20}
+                xs={24}
+                style={styles.row}>
+                <ReturnPage setFadeHandler={setFadeHandler} />
             </Col>
-            <Col span={16} offset={4}></Col>
+            <Col
+                lg={{
+                    span: 16,
+                    offset: 2,
+                }}
+                md={20}
+                xs={{
+                    span: 22,
+                    offset: 1,
+                }}
+                style={styles.row}
+                className={fadeHandler ? "fadeLeftOut" : ""}>
+                {recipeData && <CardRecipe recipe={recipeData} id={id} />}
+            </Col>
         </Row>
     );
 }
@@ -30,7 +58,7 @@ const styles = {
         flex: 1,
         textAlign: "center",
         fontSize: 42,
-        color: "var(--primary-bg-color)",
+        color: "white",
         fontWeight: "bold",
     },
 };

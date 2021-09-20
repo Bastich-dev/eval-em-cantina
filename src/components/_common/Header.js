@@ -1,10 +1,9 @@
 import React from "react";
-import GarlicIcon from "../../media/img/garlic.png";
 
 export default function Header() {
     return (
         <header style={styles.header}>
-            <img src={GarlicIcon} alt="garlic icon" style={styles.icon} />
+            <img src={"https://logo-marque.com/wp-content/uploads/2020/11/Star-Wars-Logo.png"} alt="garlic icon" style={styles.icon} />
             <h1 style={styles.title}>Cantina</h1>
         </header>
     );
@@ -18,7 +17,7 @@ const styles = {
         borderBottom: "1px solid silver",
     },
     icon: {
-        width: 70,
+        width: 100,
         height: 70,
         objectFit: "contain",
         margin: "0 20px",

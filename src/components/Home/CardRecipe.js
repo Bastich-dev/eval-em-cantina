@@ -4,7 +4,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import HeartSvg from "../../media/img/heart.svg";
 
-export default function CardRecipe({ data }) {
+export default function CardRecipe({ data, index }) {
     const howMany = Array.from(Array(data.personnes).keys());
 
     const history = useHistory();
@@ -38,11 +38,20 @@ export default function CardRecipe({ data }) {
         // }, 1500);
     };
 
+    const [fadeIn, setfadeIn] = React.useState(false);
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            setfadeIn(true);
+        }, index * 200);
+    }, [index]);
+
     return (
         <Card
             onClick={goToRecipe}
-            className="cardRecipe"
+            className={"cardRecipe " + (fadeIn ? "fadeIn" : "invisible")}
             style={styles.card}
+            hoverable
             cover={
                 <img
                     style={{

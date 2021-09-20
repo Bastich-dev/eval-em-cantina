@@ -25,8 +25,8 @@ export function compareIngredients({ ingredients }, searchInput) {
 
 export function compareSearch({ titre, description }, searchInput) {
     const isEmpty = !searchInput.search;
-    const isInTitle = titre.toLowerCase().indexOf(searchInput.search) > -1;
-    const isInDescription = description.toLowerCase().indexOf(searchInput.search) > -1;
+    const isInTitle = titre.toLowerCase().indexOf(searchInput.search.toLowerCase()) > -1;
+    const isInDescription = description.toLowerCase().indexOf(searchInput.search.toLowerCase()) > -1;
     if (isEmpty || isInTitle || isInDescription) return true;
     else return false;
 }
@@ -40,7 +40,6 @@ export function compareLevel({ niveau }, searchInput) {
 export function comparePersons({ personnes }, searchInput) {
     const isEmpty = !searchInput.persons;
     if (isEmpty) return true;
-    else if (searchInput.persons < 6 && personnes === searchInput.persons) return true;
-    else if (searchInput.persons === 6 && personnes > searchInput.persons) return true;
+    else if (personnes === searchInput.persons) return true;
     else return false;
 }

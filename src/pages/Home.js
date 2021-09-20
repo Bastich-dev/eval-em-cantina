@@ -17,11 +17,8 @@ export default function Home() {
 
     useEffect(() => {
         getListAllRecipes().then(recipes => {
-            setTimeout(() => {
-                setListRecipesInit(recipes);
-                setListRecipes(recipes);
-                console.log(recipes);
-            }, 2800);
+            setListRecipesInit(recipes);
+            setListRecipes(recipes);
         });
     }, []);
 
@@ -56,10 +53,18 @@ export default function Home() {
 
     return (
         <Row style={styles.row} justify="center">
-            <Col md={9} sm={24} style={styles.col}>
+            <Col lg={9} md={18} xs={20} style={styles.col}>
                 <Title />
             </Col>
-            <Col offset={1} md={8} sm={24} style={styles.col}>
+            <Col
+                lg={{
+                    span: 8,
+                    offset: 1,
+                }}
+                md={18}
+                xs={20}
+                style={styles.col}
+                className="fadeIn">
                 <Animation />
                 <div style={styles.containForm}>
                     <p style={styles.description}>Je souhaiterai cuisiner :</p>
@@ -72,11 +77,11 @@ export default function Home() {
                         <>
                             {listRecipes &&
                                 listRecipes.map((el, key) => (
-                                    <Col span={6} key={key}>
-                                        <CardRecipe data={el} />
+                                    <Col lg={6} md={12} sm={20} key={key}>
+                                        <CardRecipe data={el} index={key} />
                                     </Col>
                                 ))}
-                            <Col span={6}>
+                            <Col lg={6} md={12} sm={20}>
                                 <CardAddRecipe />
                             </Col>
                         </>

@@ -24,7 +24,15 @@
 
 ## 01. Description
 
-<!-- L'application Lexbase - Front se concentre sur la manipulation et de la visualisation de l'alogrithme d'intelligence artificielle déployé pour la société LEXBASE. -->
+À l’aide du framework JavaScript React.js, vous devez réaliser une application de gestion de recettes de cuisine geek.
+
+Votre application devra communiquer avec un serveur web REST et être en mesure de :
+
+-   afficher une liste complète des recettes disponibles sur une page
+-   consulter une recette en détails
+-   ajouter une nouvelle recette via un formulaire
+-   modifier une recette existante via un formulaire
+-   supprimer une recette existante
 
 <a name='02'></a>
 
@@ -34,21 +42,21 @@
 
 ##### Stack
 
-<!-- | Utilisation              | Nom                         |
-| ------------------------ | --------------------------- |
-| Front-end                | Javascript / React.js       |
-| Design                   | Material-Ui + Custom styles |
-| Bundler                  | Webpack                     |
-| Déploiement & Production | Interne                     |
-| Repo                     | Gitlab                      | -->
+| Utilisation              | Nom                       |
+| ------------------------ | ------------------------- |
+| Front-end                | Javascript / React.js     |
+| Design                   | AntDesign + Custom styles |
+| Bundler                  | Webpack                   |
+| Déploiement & Production | Vercel                    |
+| Repo                     | Gitlab                    |
 
 <a name='02-1'></a>
 
 ##### Liste des API's REST
 
-<!-- | Nom         | Language        | Documentation                                                                |
-| ----------- | --------------- | ---------------------------------------------------------------------------- |
-| API Lexbase | Python / Django | https://git2.magic-lemp.com/bchantrel/lexbase-front/-/blob/master/README.md/ | -->
+| Nom         | Language | Documentation |
+| ----------- | -------- | ------------- |
+| API Cantina | Node.js  | //            |
 
 <a name='03'></a>
 
@@ -58,38 +66,38 @@
 
 ##### Utilitaires
 
-<!-- | Nom                                                          | Utilisation                               |
-| ------------------------------------------------------------ | ----------------------------------------- |
-| react: 16.13.1 /react-dom: 16.13.1 / react-router-dom: 5.2.0 | Basique et router                         |
-| react-scripts: 3.4.3                                         | Create-react-app                          |
-| @material-ui/core: ^4.11.2                                   | Designs & fonctionalitées principales     |
-| @material-ui/lab: ^4.0.0-alpha.57                            | Designs & fonctionalitées                 |
-| @material-ui/icons: ^4.11.2                                  | Icones material ui                        |
-| axios: ^0.20.0                                               | Fonctionalitées pour appeler le backend   |
-| dotenv: ^10.0.0                                              | Utilisation des variables d'environnement | -->
+| Nom                                                                    | Utilisation                           |
+| ---------------------------------------------------------------------- | ------------------------------------- |
+| "react": "17.0.2" / "react-dom": "17.0.2" / "react-router-dom": "5.3.0 | Basique et router                     |
+| "react-scripts": 3.4.3                                                 | Create-react-app                      |
+| "axios": "^0.21.4",                                                    | Appels API REST                       |
+| "antd": "^4.16.13"                                                     | Designs & fonctionalitées principales |
+| "moment": "^2.29.1"                                                    | Fonctionalités pour le TimePicker     |
+| "react-toastify": "^8.0.2"                                             | Fonctionalités des notifications      |
 
 <a name='03-2'></a>
 
 ##### Configuration
 
-<!-- Toutes les librairies ci-dessous sont utilisés pour la config :
+Toutes les librairies ci-dessous sont utilisés pour la configuration :
 
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "clsx": "^1.1.1",
-    "css-loader": "^4.3.0",
-    "html-loader": "^1.3.1",
-    "html-webpack-plugin": "^4.5.0",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "core-js": "^3.17.3",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
     "image-webpack-loader": "^7.0.1",
-    "raw-loader": "^4.0.1",
-    "style-loader": "^1.2.1",
-    "webpack": "4.42.0",
-    "webpack-cli": "^3.3.12",
+    "raw-loader": "^4.0.2",
+    "react-scripts": "^4.0.3",
+    "style-loader": "^3.2.1",
+    "webpack": "4.44.2",
+    "webpack-cli": "^4.8.0",
     "webpack-git-hash": "^1.0.2"
 
-<a name='04'></a> -->
+<a name='04'></a>
 
 ## 04. Parcours utilisateur / Features
 
@@ -97,25 +105,43 @@
 
 ### Accès à l'application :
 
+Aucuns identifiants n'est nécessaire pour utiliser l'application;
+
 <a name='04-2'></a>
 
 ### Pages :
 
 <a name='04-2-1'></a>
 
-#### - Home
+#### - Page d'accueil
 
-<!-- _Sur cette page, l'utilisateur peux gérer tous les documents généres dans la tâche séléctionée._
+_Sur cette page, l'utilisateur peux gérer chercher une recette grâce aux champs de recherche.._
 
-<details><summary style='cursor:pointer'>Obtenir, sauvegarder, vérifier et rafraîchir le token d'authentification</summary>
-<ul>
-<b>Obtenir :</b>
-<li>=> L'access tokent et le refresh token sont obtenus après la connexion </li>
-<b>Sauvegarder :</b>
-<li>=> L'access token et le refresh token sont stockés dans le localStorage lors de la connexion / l'access token est sauvegardé lors du rachraichissement du token </li>
-<b>Vérifier :</b>
-<li>=> L'access token est vérifié lors du chargement de la page, l'utilisateur est directment connecté si ses tokens sont valides / L'access tokene est vérifié à chaque call sur l'API, si il n'est pas valide, un rafraichissement est tenté.</li>
-<b>Rafraîchir :</b>
-<li>=> Si la vérification de l'access token n'a pas réussie, un rafraichissement de l'access token est tenté grâche au refresh_token, le nouvel access token est ensuite sauvegardé dans le localStorage.</li>
+-   Animation d'appartition fade / Pure css
+-   Animation d'apparition du texte / Pure css
+-   Animation au Hover du bouton "Créer ma recette" |
+-   Animation de l'ail / Pure css
+-   Un champ pour filtrer la recherche si le texte rentré est présent dans le titre ou la description / Text Input
+-   Un champ de filtrage pour choisir le temps de préparation / Select Input
+-   Un champ de filtrage pour choisir le niveau de la recette / Select Input
+-   Un champ de filtrage pour choisir pour combien de personnes est la recette / Number Input |
+-   Affichage des recettes en fonction des filtres
+-   Animation d'apparition fade des card en chaine par rapport à l'index
+
+#### - Page de visualisation d'une recette
+
+_Sur cette page, l'utilisateur peux voir toutes les informations d'une recette en fonction de l'id dans l'url._
+
+-   Animation d'appartition fade / Pure css
+-   Bouton pour modifier la recette
+
+#### - Page de modification d'une recette
+
+_Sur cette page, l'utilisateur peux voir touts les champs pour modifier une recette._
+
+-   Plusieurs type de composants AntD :
+<ul style='margin:20px'>
+    <li>Input text avec un style modifié</li>
+    <li>Input textarea</li>    
+    <li>TimePicker</li>
 </ul>
-</details> -->

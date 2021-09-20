@@ -7,14 +7,17 @@ import "../css/recipe.css";
 export default function AddRecipe() {
     const isEditInstance = window.location.href.split("/")[3] === "new" ? false : true;
     const id = isEditInstance ? window.location.href.split("/")[4] : null;
+    const [fadeHandler, setFadeHandler] = React.useState(false);
 
     return (
         <Row>
             <Col span={20} offset={2} style={styles.row}>
-                <ReturnPage />
-                <h1 style={styles.title}>{id ? "Modifier" : "Ajouter"} une recette</h1>
+                <ReturnPage id={id} setFadeHandler={setFadeHandler} />
+                <h1 style={styles.title} className={fadeHandler ? "fadeLeftOut" : "fadeIn"}>
+                    {id ? "Modifier" : "Ajouter"} une recette
+                </h1>
             </Col>
-            <Col span={16} offset={4}>
+            <Col span={16} offset={4} className={fadeHandler ? "fadeLeftOut" : "fadeIn"}>
                 <FormRecipe isEditInstance={isEditInstance} id={id} />
             </Col>
         </Row>

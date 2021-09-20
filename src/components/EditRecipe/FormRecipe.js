@@ -14,21 +14,23 @@ import Steps from "./Inputs/Steps";
 import Time from "./Inputs/Time";
 import Title from "./Inputs/Title";
 import SubmitButton from "./SubmitButton";
-
+import moment from "moment";
 export default function FormRecipe({ id, isEditInstance }) {
     ////////////////////////   RECIPE DATA
     const [recipeData, setrecipeData] = useState();
     useEffect(() => {
         if (isEditInstance) {
-            getRecipeFromId({ id }).then(data => setrecipeData(data));
+            getRecipeFromId({ id }).then(data =>
+                setrecipeData({
+                    ...data,
+                    tempsPreparation: moment(moment.utc().startOf("day").add({ minutes: data.tempsPreparation }).format("HH:mm:ss"), "HH:mm:ss"),
+                })
+            );
         } else {
             setrecipeData({
                 description: "",
-                etapes: ["", ""],
-                ingredients: [
-                    ["", ""],
-                    ["", ""],
-                ],
+                etapes: [""],
+                ingredients: [["", ""]],
                 niveau: "padawan",
                 personnes: 1,
                 photo: "",
@@ -48,9 +50,9 @@ export default function FormRecipe({ id, isEditInstance }) {
         let formatedValues = { ...value };
         formatedValues.ingredients = formatedValues.ingredient.map(el => [el.quantity, el.title]);
         delete formatedValues.ingredient;
-        if (formatedValues?.tempsPreparations?._d) {
+        if (formatedValues?.tempsPreparation?._d) {
             formatedValues.tempsPreparation =
-                new Date(formatedValues.tempsPreparations._d).getHours() * 60 + new Date(formatedValues.tempsPreparations._d).getMinutes();
+                new Date(formatedValues.tempsPreparation._d).getHours() * 60 + new Date(formatedValues.tempsPreparation._d).getMinutes();
         } else delete formatedValues.tempsPreparation;
 
         // Send data
@@ -69,37 +71,43 @@ export default function FormRecipe({ id, isEditInstance }) {
                 .finally(() => setLoadingButtons(false));
         }
     };
+
+    const onFinishFailed = () => {
+        toast.error("Il reste des champs requis");
+    };
+
     return recipeData ? (
         <Form
             onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
             initialValues={{
                 ...recipeData,
                 ingredient: recipeData.ingredients ? recipeData.ingredients.map(el => ({ title: el[1], quantity: el[0] })) : [],
                 remember: true,
             }}
             autoComplete="off">
-            <Row className="formRecipe" gutter={[24, 24]} justify="center">
+            <Row className="formRecipe" justify="center" gutter={[24, 24]}>
                 {!recipeData && (
-                    <Col span={20} offset={2} style={{ height: "80vh" }}>
+                    <Col span={20} style={{ height: "80vh" }}>
                         <Loading />
                     </Col>
                 )}
                 {recipeData && (
                     <>
-                        <Col span={14} className="formInputs">
+                        <Col lg={14} md={24} className="formInputs">
                             <Title />
                             <Description />
-                            <Time initValue={recipeData.tempsPreparation} />
+                            <Time />
                             <Level initValue={recipeData.niveau} />
                         </Col>
-                        <Col span={10} className="aside">
+                        <Col lg={10} md={24} className="aside">
                             <Photo initValue={recipeData.photo} />
                             <Persons initValue={recipeData.personnes} />
                         </Col>
-                        <Col span={14} className="formInputs">
+                        <Col lg={14} md={24} className="formInputs">
                             <Steps />
                         </Col>
-                        <Col span={10} className="aside">
+                        <Col lg={10} md={24} className="aside">
                             <Ingredients initValue={recipeData.ingredients} />
                         </Col>
                         {id ? (
