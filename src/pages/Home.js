@@ -19,6 +19,7 @@ export default function Home() {
         getListAllRecipes().then(recipes => {
             setListRecipesInit(recipes);
             setListRecipes(recipes);
+            // console.log(JSON.stringify(recipes));
         });
     }, []);
 

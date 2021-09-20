@@ -3,18 +3,36 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"); //installed via npm
 const path = require("path");
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: {
-        stock: "./src/index.js",
+        index: "./src/index.js",
+        print: "./src/print.js",
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Output Management",
+            title: "Development",
+        }),
+    ],
+    output: {
+        filename: "[name].bundle.js",
+        path: path.resolve(__dirname, "dist"),
+        clean: true,
+    },
+
+    mode: "production",
+    entry: ["babel-polyfill", "./src/index.js"],
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
+        publicPath: "/",
     },
+    // optimization: {
+    //     splitChunks: {chunks: 'all'}
+    // },
+
     module: {
         rules: [
-            // text loader
-            { test: /\.txt$/, use: "raw-loader" },
             // css loader
             {
                 test: /\.s?css$/,
@@ -26,13 +44,24 @@ module.exports = {
             },
             { test: /\.html$/, use: [{ loader: "html-loader" }] },
             // js loader
-            // {
-            //     test: /\.(js|jsx)$/,
-            //     exclude: [/node_modules/],
-            //     loader: "babel-loader"
-            // },
-            { test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/, use: [{ loader: "file-loader" }] },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: [/node_modules/],
+                loader: "babel-loader",
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|gif|png|jpe?g|svg|ico|map|pane)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader",
+            },
         ],
     },
-    plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+    devServer: {
+        historyApiFallback: true,
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./public/index.html",
+            favicon: "./public/favicon.ico",
+        }),
+    ],
 };

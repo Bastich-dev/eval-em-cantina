@@ -22,7 +22,7 @@ export default function Persons({ initValue }) {
     return (
         <div style={styles.container} onMouseLeave={() => activeValue && setActiveRate(activeValue)}>
             <div style={styles.text}>
-                Pour {activeValue ?? activeRate} Personnes {activeValue ? activeValue === 10 && " ou +" : activeRate === 10 && " ou +"}
+                Pour {activeValue ? activeValue : activeRate} Personnes {activeValue ? activeValue === 10 && " ou +" : activeRate === 10 && " ou +"}
             </div>
             <Form.Item
                 name="personnes"
