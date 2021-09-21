@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "homepage": "./dist",
+  "homepage": ".",
   "main": "index.js",
   "keywords": [
     "JSX",
