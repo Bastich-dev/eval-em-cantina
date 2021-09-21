@@ -78,7 +78,7 @@ export default function Home() {
                         <>
                             {listRecipes &&
                                 listRecipes.map((el, key) => (
-                                    <Col lg={6} md={12} sm={20} key={key}>
+                                    <Col lg={6} md={12} sm={20} key={key} style={{ width: "-webkit-fill-available" }}>
                                         <CardRecipe data={el} index={key} />
                                     </Col>
                                 ))}

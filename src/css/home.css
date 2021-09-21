@@ -2,6 +2,24 @@
     transform: scale(1.05);
 }
 
+#addRecipe {
+    background-color: var(--primary-bg-color);
+}
+
+#addRecipe:hover {
+    background-color: var(--variant-1-bg-color);
+}
+
+@media (max-width: 880px) {
+    .animated-title * {
+        font-size: 18px !important;
+    }
+
+    .animated-title .title {
+        font-size: 34px !important;
+    }
+}
+
 .breeding-rhombus-spinner {
     height: 65px;
     width: 65px;

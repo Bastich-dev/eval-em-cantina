@@ -29,11 +29,19 @@ export default function AddRecipe() {
                     span: 20,
                 }}
                 md={20}
-                xs={24}
+                xs={{
+                    span: 22,
+                }}
                 style={styles.row}>
                 <ReturnPage setFadeHandler={setFadeHandler} />
 
-                <Button style={styles.editIcon} size="large" type="primary" icon={<EditOutlined />} onClick={goToRecipe}>
+                <Button
+                    style={styles.editIcon}
+                    className={fadeHandler ? "fadeLeftOut" : ""}
+                    size="large"
+                    type="primary"
+                    icon={<EditOutlined />}
+                    onClick={goToRecipe}>
                     Modifier recette
                 </Button>
             </Col>
@@ -44,7 +52,6 @@ export default function AddRecipe() {
                 md={20}
                 xs={{
                     span: 22,
-                    offset: 1,
                 }}
                 style={styles.row}
                 className={fadeHandler ? "fadeLeftOut" : ""}>

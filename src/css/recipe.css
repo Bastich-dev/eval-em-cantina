@@ -47,3 +47,18 @@
     width: 1em;
     margin-left: -1em;
 }
+
+.bottomLayer {
+    font-size: calc(2vh + 1vw);
+    justify-content: space-between;
+}
+
+@media (max-width: 880px) {
+    .bottomLayer {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .bottomLayer > div {
+        width: 100%;
+    }
+}

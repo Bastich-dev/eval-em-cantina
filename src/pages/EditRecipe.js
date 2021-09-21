@@ -20,14 +20,21 @@ export default function AddRecipe() {
                     span: 16,
                     offset: 2,
                 }}
-                xs={24}
+                sm={{
+                    span: 22,
+                    offset: 2,
+                }}
+                xs={{
+                    span: 22,
+                    offset: 2,
+                }}
                 style={styles.row}>
                 <ReturnPage id={id} setFadeHandler={setFadeHandler} />
                 <h1 style={styles.title} className={fadeHandler ? "fadeLeftOut" : "fadeIn"}>
                     {id ? "Modifier" : "Ajouter"} une recette
                 </h1>
             </Col>
-            <Col span={16} offset={4} className={fadeHandler ? "fadeLeftOut" : "fadeIn"}>
+            <Col span={20} offset={2} className={fadeHandler ? "fadeLeftOut" : "fadeIn"}>
                 <FormRecipe isEditInstance={isEditInstance} id={id} />
             </Col>
         </Row>
@@ -39,11 +46,10 @@ const styles = {
         display: "flex",
         alignItems: "center",
         marginTop: 50,
+        flexWrap: "wrap",
+        justifyContent: "space-between",
     },
     title: {
-        margin: 0,
-        padding: 0,
-        flex: 1,
         textAlign: "center",
         fontSize: 42,
         color: "var(--primary-bg-color)",

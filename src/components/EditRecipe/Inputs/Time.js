@@ -13,7 +13,7 @@ export default function Time() {
                         message: "Requis",
                     },
                 ]}>
-                <TimePicker showNow={false} size="large" style={styles.input} placeholder="00h 00min 00sec" />
+                <TimePicker format="HH:mm" showNow={false} size="large" style={styles.input} placeholder="00h 00min" />
             </Form.Item>
         </>
     );

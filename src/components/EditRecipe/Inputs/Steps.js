@@ -35,7 +35,12 @@ export default function Steps() {
                                     noStyle>
                                     <Input.TextArea rows={5} placeholder={"Etape " + (index + 1)} style={{ width: "95%" }} />
                                 </Form.Item>
-                                {index >= 1 ? <MinusCircleOutlined style={{ marginLeft: 5 }} onClick={() => remove(field.name)} /> : null}
+                                {index >= 1 ? (
+                                    <MinusCircleOutlined
+                                        style={{ marginLeft: 5, color: "var(--primary-bg-color)" }}
+                                        onClick={() => remove(field.name)}
+                                    />
+                                ) : null}
                             </Form.Item>
                         ))}
                         <Form.Item>

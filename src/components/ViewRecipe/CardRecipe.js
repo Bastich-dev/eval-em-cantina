@@ -22,11 +22,13 @@ export default function CardRecipe({ recipe, id }) {
 
     return (
         <section hoverable="true" style={styles.card} className="fadeIn">
-            <img src={recipe.photo} alt={recipe.titre} style={styles.image} />
+            <div style={{ ...styles.image, ...styles.defaultImage }}>
+                <img src={recipe.photo} alt={recipe.titre} style={styles.image} />
+            </div>
             <div style={styles.layer}>
                 <h2 style={styles.title}>{recipe.titre}</h2>
 
-                <div style={styles.bottomLayer}>
+                <div style={styles.bottomLayer} className="bottomLayer">
                     <div>
                         <div style={styles.center}>
                             <img src={ClockImage} alt="clock" style={styles.clock} />
@@ -50,10 +52,10 @@ export default function CardRecipe({ recipe, id }) {
             </div>
 
             <Row gutter={[24, 24]} style={styles.row} justify="center">
-                <Col lg={10} md={20}>
+                <Col lg={10} md={24} sm={24} xs={24}>
                     <IngredientsList ingredients={recipe.ingredients} />
                 </Col>
-                <Col lg={14} md={20}>
+                <Col lg={14} md={20} sm={24} xs={24}>
                     <StepsList steps={recipe.etapes} />
                 </Col>
             </Row>
@@ -114,16 +116,20 @@ const styles = {
     },
     clockText: {
         color: "white",
-        fontSize: 30,
         marginLeft: 10,
         fontWeight: "bold",
     },
     bottomLayer: {
         display: "flex",
-        justifyContent: "space-between",
         padding: "10px 30px",
     },
-
+    defaultImage: {
+        objectFit: "cover",
+        backgroundImage: 'url("http://beepeers.com/assets/images/commerces/default-image.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+    },
     row: {
         padding: 15,
     },

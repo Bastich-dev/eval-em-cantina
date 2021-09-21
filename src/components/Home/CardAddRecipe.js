@@ -7,7 +7,7 @@ export default function CardAddRecipe() {
     const history = useHistory();
 
     return (
-        <Card hoverable className="cardRecipe" style={styles.card} onClick={() => history.push("/new")}>
+        <Card hoverable className="cardRecipe" id="addRecipe" style={styles.card} onClick={() => history.push("/new")}>
             <div style={styles.container}>
                 <h3 style={styles.title}>Ajouter ma recette</h3>
                 <PlusCircleOutlined style={styles.icon} />
@@ -24,7 +24,6 @@ const styles = {
         marginBottom: 45,
         cursor: "pointer",
         transition: "0.3s",
-        backgroundColor: "var(--primary-bg-color)",
     },
     container: {
         minHeight: 290,
@@ -37,6 +36,7 @@ const styles = {
         fontSize: 24,
         color: "white",
         margin: 20,
+        textAlign: "center",
     },
     icon: {
         fontSize: 46,

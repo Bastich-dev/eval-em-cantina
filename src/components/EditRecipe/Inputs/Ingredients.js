@@ -36,7 +36,7 @@ export default function Ingredients() {
                                     rules={[{ required: true, message: "Requis" }]}>
                                     <Input placeholder="Ingrédient" size="large" />
                                 </Form.Item>
-                                {key >= 1 ? <MinusCircleOutlined onClick={() => remove(name)} /> : null}
+                                {key >= 1 ? <MinusCircleOutlined style={{ color: "var(--primary-bg-color)" }} onClick={() => remove(name)} /> : null}
                             </Space>
                         ))}
                         <Form.Item>

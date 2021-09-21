@@ -16,7 +16,7 @@ export async function getRecipeFromId({ id }) {
 export async function createRecipe({ data }) {
     const path = `${urlApi}/recipes/`;
     const response = await axios.post(path, data);
-    return response.data;
+    return response.data.recette;
 }
 
 export async function updateRecipe({ id, data }) {

@@ -23,7 +23,7 @@ export default function FormRecipe({ id, isEditInstance }) {
             getRecipeFromId({ id }).then(data =>
                 setrecipeData({
                     ...data,
-                    tempsPreparation: moment(moment.utc().startOf("day").add({ minutes: data.tempsPreparation }).format("HH:mm:ss"), "HH:mm:ss"),
+                    tempsPreparation: moment(moment.utc().startOf("day").add({ minutes: data.tempsPreparation }).format("HH:mm"), "HH:mm"),
                 })
             );
         } else {
@@ -64,7 +64,7 @@ export default function FormRecipe({ id, isEditInstance }) {
         } else {
             createRecipe({ data: formatedValues })
                 .then(({ id }) => {
-                    history.push("/edit/" + id);
+                    history.push("/recette/" + id);
                     toast.success("La recette a été ajoutée avec succès");
                 })
                 .catch(() => toast.error("Erreur survenue à l'ajout de la recette"))
@@ -100,27 +100,27 @@ export default function FormRecipe({ id, isEditInstance }) {
                             <Time />
                             <Level initValue={recipeData.niveau} />
                         </Col>
-                        <Col lg={10} md={24} className="aside">
+                        <Col lg={10} md={24} sm={24} xs={24} className="aside">
                             <Photo initValue={recipeData.photo} />
                             <Persons initValue={recipeData.personnes} />
                         </Col>
-                        <Col lg={14} md={24} className="formInputs">
+                        <Col lg={14} md={24} sm={24} xs={24} className="formInputs">
                             <Steps />
                         </Col>
-                        <Col lg={10} md={24} className="aside">
+                        <Col lg={10} md={24} sm={24} xs={24} className="aside">
                             <Ingredients initValue={recipeData.ingredients} />
                         </Col>
                         {id ? (
                             <>
-                                <Col lg={6} md={12} sm={24}>
+                                <Col lg={6} md={12} sm={24} xs={24}>
                                     <SubmitButton id={id} loading={loadingButtons} />
                                 </Col>
-                                <Col lg={6} md={12} sm={24}>
+                                <Col lg={6} md={12} sm={24} xs={24}>
                                     <DeleteButton id={id} loading={loadingButtons} />
                                 </Col>
                             </>
                         ) : (
-                            <Col lg={12} md={12} sm={24}>
+                            <Col lg={12} md={12} sm={24} xs={24}>
                                 <SubmitButton id={id} loading={loadingButtons} />
                             </Col>
                         )}
