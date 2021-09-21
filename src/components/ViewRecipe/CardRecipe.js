@@ -1,11 +1,10 @@
-import { Row, Col, Button } from "antd";
+import { Col, Row } from "antd";
+import moment from "moment";
 import React from "react";
 import ClockImage from "../../media/img/clock.png";
-import moment from "moment";
-import StepsList from "./StepsList";
 import IngredientsList from "./IngredientsList";
-import { EditOutlined } from "@ant-design/icons";
-import { useHistory } from "react-router";
+import StepsList from "./StepsList";
+
 export default function CardRecipe({ recipe, id }) {
     const getLevelLabel = () => {
         switch (recipe.niveau) {
@@ -21,21 +20,11 @@ export default function CardRecipe({ recipe, id }) {
         }
     };
 
-    const history = useHistory();
-
-    const goToRecipe = () => {
-        history.push("/edit/" + id);
-    };
-
     return (
         <section hoverable="true" style={styles.card} className="fadeIn">
             <img src={recipe.photo} alt={recipe.titre} style={styles.image} />
             <div style={styles.layer}>
                 <h2 style={styles.title}>{recipe.titre}</h2>
-
-                <Button style={styles.editIcon} size="large" type="primary" icon={<EditOutlined />} onClick={goToRecipe}>
-                    Modifier recette
-                </Button>
 
                 <div style={styles.bottomLayer}>
                     <div>
@@ -135,17 +124,6 @@ const styles = {
         padding: "10px 30px",
     },
 
-    editIcon: {
-        // backgroundColor: "var(--primary-bg-color)",
-        position: "absolute",
-        color: "white",
-        height: 50,
-        width: 200,
-        margin: 30,
-        fontSize: 16,
-        fontWeight: "bold",
-        borderRadius: 7,
-    },
     row: {
         padding: 15,
     },

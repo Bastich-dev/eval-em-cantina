@@ -1,4 +1,5 @@
 import { Col, Form, Row } from "antd";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
@@ -14,7 +15,6 @@ import Steps from "./Inputs/Steps";
 import Time from "./Inputs/Time";
 import Title from "./Inputs/Title";
 import SubmitButton from "./SubmitButton";
-import moment from "moment";
 export default function FormRecipe({ id, isEditInstance }) {
     ////////////////////////   RECIPE DATA
     const [recipeData, setrecipeData] = useState();

@@ -1,9 +1,10 @@
-import { Col, Row } from "antd";
-import React, { useState, useEffect } from "react";
+import { EditOutlined } from "@ant-design/icons";
+import { Button, Col, Row } from "antd";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
+import CardRecipe from "../components/ViewRecipe/CardRecipe";
 import ReturnPage from "../components/_common/ReturnPage";
 import "../css/recipe.css";
-import CardRecipe from "../components/ViewRecipe/CardRecipe";
-
 import { getRecipeFromId } from "../utils/API_Cantina";
 
 export default function AddRecipe() {
@@ -15,23 +16,30 @@ export default function AddRecipe() {
     }, [id]);
 
     const [fadeHandler, setFadeHandler] = useState(false);
+    const history = useHistory();
+
+    const goToRecipe = () => {
+        history.push("/edit/" + id);
+    };
 
     return (
-        <Row align="top" id="viewRecipe">
+        <Row align="top" id="viewRecipe" justify="center">
             <Col
                 lg={{
-                    span: 2,
-                    offset: 2,
+                    span: 20,
                 }}
                 md={20}
                 xs={24}
                 style={styles.row}>
                 <ReturnPage setFadeHandler={setFadeHandler} />
+
+                <Button style={styles.editIcon} size="large" type="primary" icon={<EditOutlined />} onClick={goToRecipe}>
+                    Modifier recette
+                </Button>
             </Col>
             <Col
                 lg={{
-                    span: 16,
-                    offset: 2,
+                    span: 20,
                 }}
                 md={20}
                 xs={{
@@ -50,7 +58,9 @@ const styles = {
     row: {
         display: "flex",
         alignItems: "center",
+        justifyContent: "space-between",
         marginTop: 50,
+        flexWrap: "wrap",
     },
     title: {
         margin: 0,
@@ -60,5 +70,13 @@ const styles = {
         fontSize: 42,
         color: "white",
         fontWeight: "bold",
+    },
+    editIcon: {
+        color: "white",
+        height: 65,
+        width: 300,
+        fontSize: 24,
+        fontWeight: "bold",
+        borderRadius: 7,
     },
 };

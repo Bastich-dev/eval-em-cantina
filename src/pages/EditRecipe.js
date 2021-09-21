@@ -11,7 +11,17 @@ export default function AddRecipe() {
 
     return (
         <Row>
-            <Col span={20} offset={2} style={styles.row}>
+            <Col
+                lg={{
+                    span: 18,
+                    offset: 2,
+                }}
+                md={{
+                    span: 16,
+                    offset: 2,
+                }}
+                xs={24}
+                style={styles.row}>
                 <ReturnPage id={id} setFadeHandler={setFadeHandler} />
                 <h1 style={styles.title} className={fadeHandler ? "fadeLeftOut" : "fadeIn"}>
                     {id ? "Modifier" : "Ajouter"} une recette
