@@ -22,7 +22,7 @@ app.use(
     })
 );
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 const randomId = function (length = 6) {
     return Math.random()
@@ -88,7 +88,7 @@ app.put("/api/recipe/:id", (req, res) => {
 app.use((req, res, next) => {
     res.setHeader("Content-Type", "text/html");
     res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-    res.sendFile(path.join(__dirname, "build", "index.html"));
+    res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 // start express server on port 5000
