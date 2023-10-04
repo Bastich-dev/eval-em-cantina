@@ -1,1 +1,135 @@
-{"recipes":[{"titre":"Star Wars Wookiee Granola Bars","description":"Maintenant, comme vous le savez, les grands films s'accompagnent de grandes responsabilités en matière de collation. Ces barres granola chocolatées « Chewy » sont vraiment la seule collation dont vous avez besoin pour votre marathon de visionnage de films. Bien sûr, bien sûr, n'hésitez pas à en faire plus, mais ne sous-estimez pas la puissance du Wookiee… Profitez-en !","tempsPreparation":"10","niveau":"maitre","photo":"https://cdn.totallythebomb.com/wp-content/uploads/2015/08/chewbacca-granola-bars.jpg.webp","personnes":5,"etapes":["Déballez et coupez votre Tootsie Roll en deux dans le sens de la longueur.","Tirez et aplatissez la moitié du bonbon jusqu'à obtenir la forme de la ceinture de Chewbacca.","Déballez une barre granola.","Placez la ceinture Tootsie Roll de Chewbacca en diagonale sur votre barre granola, en la pinçant sur les côtés pour la fixer.","Placez des bonbons Nerds jaunes sur sa ceinture Tootsie Roll.","Déballez trois Kisses au chocolat et placez-les dans un petit bol allant au micro-ondes. Cuire au micro-ondes à puissance maximale pendant 30 secondes ou jusqu'à ce qu'il soit juste assez fondu pour être remué avec la pointe d'un couteau. Vous ne voulez pas que votre chocolat soit liquéfié.","Étalez le chocolat noir sur le dessus de votre barre granola en soulevant avec votre couteau pour former des pics ressemblant à de la fourrure.","Placez un carré de chocolat blanc dans un petit bol allant au micro-ondes.","Cuire au micro-ondes à puissance maximale pendant 15 secondes ou jusqu'à ce qu'il soit juste assez fondu pour être remué avec la pointe d'un couteau. Ne liquéfiez pas le chocolat.","Avec la pointe de votre couteau transférez une petite quantité de chocolat blanc fondu sur le chocolat noir de votre barre granola à l'endroit où se trouvera le visage de Chewbacca. Assurez-vous de mélanger et de soulever avec votre couteau pour former la fourrure. Ce processus de mélange des deux chocolats donnera une couleur de fourrure faciale brun clair.","Coupez vos M&M's marron en deux. Ce sera le nez de Chewbacca. Placez-le au centre de la fourrure du visage marron clair.","Trempez un cure-dent dans votre chocolat blanc fondu et tamponnez deux yeux blancs sur votre barre granola."],"ingredients":[{"title":"Barres granola Quake","quantity":"4"},{"title":"Paquet de Bonbons M&M's marron","quantity":"1"},{"title":"Paquet Bonbons Nerds jaunes","quantity":"1"},{"title":"Paquet Bonbons Tootsie Rolls","quantity":"1"},{"quantity":"1","title":"Tablette de Chocolat blanc"}],"id":1},{"titre":"Pastaaaa","description":"ddddd","niveau":"padawan","photo":"","tempsPreparation":false,"personnes":10,"etapes":["Etape 1","Etape 2","Etape 3"],"ingredients":[{"title":"Pasta","quantity":10}],"id":2}]}
+{
+    "recipes": [
+        {
+            "titre": "Star Wars Wookiee Granola Bars",
+            "description": "Maintenant, comme vous le savez, les grands films s'accompagnent de grandes responsabilités en matière de collation. Ces barres granola chocolatées « Chewy » sont vraiment la seule collation dont vous avez besoin pour votre marathon de visionnage de films. Bien sûr, bien sûr, n'hésitez pas à en faire plus, mais ne sous-estimez pas la puissance du Wookiee… Profitez-en !",
+            "tempsPreparation": "10",
+            "niveau": "maitre",
+            "photo": "https://cdn.totallythebomb.com/wp-content/uploads/2015/08/chewbacca-granola-bars.jpg.webp",
+            "personnes": 5,
+            "etapes": [
+                "Déballez et coupez votre Tootsie Roll en deux dans le sens de la longueur.",
+                "Tirez et aplatissez la moitié du bonbon jusqu'à obtenir la forme de la ceinture de Chewbacca.",
+                "Déballez une barre granola.",
+                "Placez la ceinture Tootsie Roll de Chewbacca en diagonale sur votre barre granola, en la pinçant sur les côtés pour la fixer.",
+                "Placez des bonbons Nerds jaunes sur sa ceinture Tootsie Roll.",
+                "Déballez trois Kisses au chocolat et placez-les dans un petit bol allant au micro-ondes. Cuire au micro-ondes à puissance maximale pendant 30 secondes ou jusqu'à ce qu'il soit juste assez fondu pour être remué avec la pointe d'un couteau. Vous ne voulez pas que votre chocolat soit liquéfié.",
+                "Étalez le chocolat noir sur le dessus de votre barre granola en soulevant avec votre couteau pour former des pics ressemblant à de la fourrure.",
+                "Placez un carré de chocolat blanc dans un petit bol allant au micro-ondes.",
+                "Cuire au micro-ondes à puissance maximale pendant 15 secondes ou jusqu'à ce qu'il soit juste assez fondu pour être remué avec la pointe d'un couteau. Ne liquéfiez pas le chocolat.",
+                "Avec la pointe de votre couteau transférez une petite quantité de chocolat blanc fondu sur le chocolat noir de votre barre granola à l'endroit où se trouvera le visage de Chewbacca. Assurez-vous de mélanger et de soulever avec votre couteau pour former la fourrure. Ce processus de mélange des deux chocolats donnera une couleur de fourrure faciale brun clair.",
+                "Coupez vos M&M's marron en deux. Ce sera le nez de Chewbacca. Placez-le au centre de la fourrure du visage marron clair.",
+                "Trempez un cure-dent dans votre chocolat blanc fondu et tamponnez deux yeux blancs sur votre barre granola."
+            ],
+            "ingredients": [
+                { "title": "Barres granola Quake", "quantity": "4" },
+                { "title": "Paquet de Bonbons M&M's marron", "quantity": "1" },
+                { "title": "Paquet Bonbons Nerds jaunes", "quantity": "1" },
+                { "title": "Paquet Bonbons Tootsie Rolls", "quantity": "1" },
+                { "quantity": "1", "title": "Tablette de Chocolat blanc" }
+            ],
+            "id": 1
+        },
+        {
+            "titre": "Quesadillas droïdes Star Wars BB-8",
+            "description": "Vraiment, ils ne sont pas si difficiles, mais je pense que si vous construisez un droïde, vous voudrez peut-être un guide étape par étape, n'est-ce pas ?",
+            "tempsPreparation": null,
+            "niveau": "jedi",
+            "photo": "https://cdn.totallythebomb.com/wp-content/uploads/2015/10/droid-quesadilla-.jpg.webp",
+            "personnes": 2,
+            "etapes": [
+                "Dans un petit bol, mélangez votre fromage frais ramolli avec une noisette de colorant alimentaire noir jusqu'à obtenir une couleur gris argenté.\n\nRetournez un sac ziplock à l’envers sur votre main et récupérez le fromage à la crème argenté en réservant une petite quantité dans le bol.\n\nRetournez le sac à l’endroit et pressez le mélange de fromage à la crème dans un coin du sac.\n\nAvec un couteau bien aiguisé, coupez le coin du sac à sandwich pour avoir un petit trou à partir duquel vous pourrez passer le fromage à la crème. Plus c’est petit, mieux c’est.\n\nAjoutez plus de colorant alimentaire noir au fromage à la crème gris argenté réservé jusqu'à obtenir une couleur noir de jais.",
+                "Pour le corps :\n\nPrenez une tranche de fromage cheddar et placez-la sur une planche à découper. Retournez votre verre à vin et utilisez-le pour découper un cercle plein au centre de la tranche.\n\nPrenez ce solide cercle de fromage et, avec un couteau d'association, à main levée, un autre petit cercle au centre. Cela devrait maintenant ressembler à un beignet au fromage.\n\nAvec votre couteau d'appariement, coupez quatre sections concentriques du trou intérieur en laissant quatre petits rayons intérieurs. Cela formera le mécanisme central du corps de votre droïde.\n\nPrenez votre autre tranche de fromage cheddar et placez-la sur la planche à découper. Retournez votre verre à vin et utilisez-le pour découper un cercle plein au centre de la deuxième tranche.\n\nPrenez ce deuxième cercle de fromage et, avec un couteau, coupez-le en quatre morceaux de tarte égaux.\n\nAvec votre couteau d'accordage, coupez le bord arrondi de chaque morceau de tarte en formant quatre quarts de rond égaux, à peu près de la même épaisseur que votre pièce centrale du mécanisme. Ceux-ci formeront les quatre pièces latérales du corps de votre droïde.",
+                "Pour la tête :\n\nPrenez le reste d'une tranche de fromage cheddar et, avec votre couteau, coupez une section autour du bord du trou arrondi pour la bande de la tête du droïde. Cela devrait mesurer environ un quart de pouce de largeur.\n\nDans le reste de l'autre tranche de fromage, coupez des carrés et des rectangles de différentes tailles pour les fixer comme pièces décoratives le long de la bande grise inférieure de la tête.\n\nCoupez votre deuxième tortilla de farine en deux sur le diamètre.\n\nAvec votre couteau coupez les coins de la tortilla pour les arrondir un peu.\n\nCoupez l'un des morceaux de tortilla pour former l'antenne qui ira au-dessus de la tête du droïde.",
+                "Assemblée:\nPlacez le corps rond de quesadilla de votre droïde sur une assiette allant au micro-ondes.\nSaupoudrer des 2/3 du mélange de fromages mexicains.\n\nGarnir le fromage râpé de l'autre tortilla ronde.\n\nMettez au micro-ondes pendant une minute.\n\nRépétez ce processus avec la tête de tortilla du droïde. Vous devriez maintenant avoir deux quesadillas au fromage.\n\nPlacez tous les morceaux de fromage cheddar tranchés sur votre BB-8 Droid comme illustré et déposez du fromage à la crème gris argenté dans les zones indiquées.\n\nAvec la pointe de votre couteau, placez une petite noisette de fromage à la crème noir sur la tête de votre droïde et une noisette encore plus petite en dessous et à droite de celle-ci comme indiqué.\n\nPlacez un bord argenté autour du plus petit point de fromage à la crème noir.\n\nPlacez la tête de votre droïde sur son corps et recouvrez-la avec le morceau d'antenne tortilla."
+            ],
+            "ingredients": [
+                {
+                    "title": "tortillas de farine (taille taco molle)",
+                    "quantity": "2"
+                },
+                {
+                    "title": "onces de fromage à la crème ramolli",
+                    "quantity": "2"
+                },
+                {
+                    "title": "tranches de sandwich au fromage cheddar",
+                    "quantity": "2"
+                },
+                {
+                    "title": "tasse de mélange de fromages mexicains râpés",
+                    "quantity": "1"
+                },
+                {
+                    "title": "colorant alimentaire noir",
+                    "quantity": "1"
+                },
+                {
+                    "title": "un sachet hermétique",
+                    "quantity": "1"
+                },
+                {
+                    "title": "verre à vin blanc",
+                    "quantity": "1"
+                }
+            ],
+            "id": "2"
+        },
+        {
+            "titre": "ŒUFS FARCIS DE BABY YODA À L'AVOCAT",
+            "description": "Si vous préparez votre menu de fêtes pour Pâques ce week-end, il y a de fortes chances que des œufs farcis y figurent. Ils sont un incontournable de mes réunions de famille, mais cette année, j'ai apporté une touche amusante (et geek) à ce classique.\n\n",
+            "tempsPreparation": null,
+            "niveau": "maitre",
+            "photo": "https://popcornerreviews.com/wp-content/uploads/2020/04/baby-yoda-the-mandalorian-eggs-scaled-e1619747447828.jpeg",
+            "personnes": 1,
+            "etapes": [
+                "Épluchez vos œufs durs. Ensuite, coupez vos œufs avec un couteau non dentelé dans le sens de la longueur.",
+                "Retirez les jaunes, placez-les dans un bol moyen et écrasez-les. Ajoutez la mayonnaise, la moutarde jaune, la purée d'avocat et une pincée de sel et de poivre dans le bol avec les jaunes d'œufs. Mélangez bien et écrasez votre mélange jusqu'à consistance lisse. (Si vous laissez des morceaux trop gros, la pointe du glaçage risque de se boucher.)",
+                "Remplissez votre poche à douille avec le mélange avocat-jaune. Mettre de côté.",
+                "Coupez de petits morceaux de céleri d'environ 1/2 pouce de longueur, puis coupez-le en deux dans le sens de la longueur. Ensuite, coupez le petit morceau de céleri en deux en diagonale pour former un triangle en forme d'oreille. Répétez ce processus pour créer une petite tarte aux oreilles.",
+                "Prenez une des moitiés de blanc d’œuf et faites-la glisser en deux au milieu. (Ce sera le haut du module de Baby Yoda.)\n",
+                "Il est maintenant temps de créer Baby Yoda dans son pod ! Prenez la moitié d'un blanc d'œuf et remplissez le milieu de l'œuf avec le mélange avocat-jaune. Vers la fin de l'œuf, là où il y a une plus grande quantité de blanc d'œuf, ajoutez une quantité supplémentaire du mélange pour sa tête.\n",
+                "Ensuite, prenez le morceau de blanc d’œuf coupé en quartiers et placez-le sur le Baby-Yoda-en-formation à l’arrière de l’œuf (pas là où se trouve sa tête).\n",
+                "Prenez deux triangles de céleri et collez-les sur les côtés de la tête de Baby Yoda pour les oreilles.\n",
+                "Enfin, prenez deux grains de poivre et placez-les sur le visage de Baby Yoda pour ses yeux.\n",
+                "Répétez le processus d'assemblage jusqu'à ce que tous vos œufs aient été utilisés.\n"
+            ],
+            "ingredients": [
+                ["", ""],
+                {
+                    "title": "Mayonnaise",
+                    "quantity": "1"
+                },
+                {
+                    "title": "c. de moutarde jaune",
+                    "quantity": "1"
+                },
+                {
+                    "title": "La moitié d'un avocat, écrasé",
+                    "quantity": "1"
+                },
+                {
+                    "title": "Pincée de sel et de poivre",
+                    "quantity": "1"
+                },
+                {
+                    "title": "Céleri",
+                    "quantity": "1"
+                },
+                {
+                    "title": "Poivres",
+                    "quantity": "1"
+                },
+                {
+                    "title": "Poche à glaçage",
+                    "quantity": "1"
+                },
+                {
+                    "title": "Pointe à glaçage, grand rond",
+                    "quantity": "1"
+                }
+            ],
+            "id": "5ok9u4uemn2"
+        }
+    ]
+}

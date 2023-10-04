@@ -20,14 +20,10 @@ export default function Ingredients() {
                     <>
                         {fields.map(({ key, name, ...restField }) => (
                             <Space key={key} style={{ display: "flex", marginBottom: 8 }} align="baseline">
-                                <Form.Item {...restField} validateTrigger={["onChange", "onBlur"]} name={[name, "quantity"]}>
+                                <Form.Item {...restField} name={[name, "quantity"]}>
                                     <Input type="number" placeholder="Quantité" size="large" min={0} max={100000} />
                                 </Form.Item>
-                                <Form.Item
-                                    {...restField}
-                                    validateTrigger={["onChange", "onBlur"]}
-                                    name={[name, "title"]}
-                                    rootClassName="flex-1">
+                                <Form.Item {...restField} name={[name, "title"]} rootClassName="flex-1">
                                     <Input placeholder="Ingrédient" size="large" />
                                 </Form.Item>
                                 {key >= 1 ? (
