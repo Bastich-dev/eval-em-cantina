@@ -34,7 +34,7 @@ export default function FormRecipe({ id }) {
     const onFinish = (data) => {
         setactionLoading(true);
         if (id)
-            updateRecipe({ id: +id, data })
+            updateRecipe({ id, data })
                 .then(() => toast.success("La recette a été modifié avec succès"))
                 .catch((err) =>
                     err.response.data.error

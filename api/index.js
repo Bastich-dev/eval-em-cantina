@@ -6,7 +6,6 @@ const fs = require("fs");
 const pathData = "../data.json";
 const app = express();
 
-var allowedOrigins = ["http://localhost:3000", "https://cantina-starwars.vercel.app/"];
 app.use(cors({}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../build")));
