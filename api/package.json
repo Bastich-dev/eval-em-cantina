@@ -1,0 +1,43 @@
+{
+    "name": "shortname",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "homepage": ".",
+    "main": "index.js",
+    "keywords": [
+        "JSX",
+        "React",
+        "WEBPACK"
+    ],
+    "author": {
+        "name": "Bastien Chantrel",
+        "email": "bastien.chantrel.pro@gmail.com",
+        "url": "https://github.com/BastosC"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "nodemon": "^3.0.1"
+    },
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.3%",
+            "not ie 11",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            ">0.3%",
+            "not ie 11",
+            "not dead",
+            "not op_mini all"
+        ]
+    }
+}
