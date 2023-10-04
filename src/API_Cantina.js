@@ -1,5 +1,5 @@
 import axios from "axios";
-const urlApi = "http://localhost:5000/api";
+const urlApi = process.env.NODE_ENV === "development " ? "http://localhost:5000/api" : "https://cantina-starwars.vercel.app/api";
 
 export async function getListAllRecipes() {
     await fakeDelay(1000);

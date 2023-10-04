@@ -38,7 +38,7 @@ export default function HomePage() {
                 compareTime(e, searchInput) &&
                 compareIngredients(e, searchInput) &&
                 compareLevel(e, searchInput)
-        ) || false;
+        ) || [];
 
     return (
         <Row
