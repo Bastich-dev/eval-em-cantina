@@ -3,6 +3,7 @@ const path = require("path");
 var cors = require("cors");
 const fs = require("fs");
 
+const pathData = path.join(__dirname, "data.json");
 const app = express();
 
 var allowedOrigins = ["http://localhost:3000", "https://cantina-starwars.vercel.app/"];
@@ -31,13 +32,13 @@ const randomId = function (length = 6) {
 
 // api/recipes
 app.get("/api/recipes", (req, res) => {
-    const { recipes } = require("./data.json");
+    const { recipes } = require(pathData);
     return res.json(recipes);
 });
 
 app.post("/api/recipes", (req, res) => {
-    const fileName = "./data.json";
-    let data = require("./data.json");
+    const fileName = pathData;
+    let data = require(pathData);
     const new_id = randomId(18);
     if (data.recipes.length >= 30) return res.status(500).send({ error: "Limite de recettes atteinte" });
     data.recipes.push({ ...req.body, id: new_id });
@@ -50,7 +51,7 @@ app.post("/api/recipes", (req, res) => {
 // api/recipe/:id
 
 app.get("/api/recipe/:id", (req, res) => {
-    const { recipes } = require("./data.json");
+    const { recipes } = require(pathData);
     const id = req.params.id;
     const data = recipes.find((e) => e.id == id);
     if (!data) return res.status(500).send({ error: "La recette n'existe pas" });
@@ -59,8 +60,8 @@ app.get("/api/recipe/:id", (req, res) => {
 });
 
 app.delete("/api/recipe/:id", (req, res) => {
-    const fileName = "./data.json";
-    let data = require("./data.json");
+    const fileName = pathData;
+    let data = require(pathData);
     const id = req.params.id;
     const index = data.recipes.findIndex((e) => e.id == id);
     if (index === -1) return res.status(500).send({ error: "La recette n'existe pas" });
@@ -72,8 +73,8 @@ app.delete("/api/recipe/:id", (req, res) => {
 });
 
 app.put("/api/recipe/:id", (req, res) => {
-    const fileName = "./data.json";
-    let data = require("./data.json");
+    const fileName = pathData;
+    let data = require(pathData);
     const id = req.params.id;
     const index = data.recipes.findIndex((e) => e.id == id);
     if (index === -1) return res.status(500).send({ error: "La recette n'existe pas" });
@@ -85,6 +86,8 @@ app.put("/api/recipe/:id", (req, res) => {
 });
 
 app.use((req, res, next) => {
+    res.setHeader("Content-Type", "text/html");
+    res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
@@ -92,3 +95,4 @@ app.use((req, res, next) => {
 app.listen(5000, () => {
     console.log("server started on port 5000");
 });
+module.exports = app;
