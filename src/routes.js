@@ -1,30 +1,30 @@
-import EditRecipe from "./pages/EditRecipe";
-import Home from "./pages/Home";
-import ViewRecipe from "./pages/ViewRecipe";
+import EditPage from "pages/edit/page";
+import HomePage from "pages/home/page";
+import ViewPage from "pages/view/page";
 
 const routes = [
     {
         path: "/",
         name: "Liste des recettes",
-        component: Home,
+        component: HomePage,
         exact: true,
-    },
-    {
-        path: "/recette/",
-        name: "Voir une recette",
-        component: ViewRecipe,
-        exact: false,
     },
     {
         path: "/new",
         name: "Nouvelle recette",
-        component: EditRecipe,
+        component: EditPage,
         exact: true,
     },
     {
-        path: "/edit",
+        path: "/recette/:id",
+        name: "Voir une recette",
+        component: ViewPage,
+        exact: false,
+    },
+    {
+        path: "/edit/:id",
         name: "Modifier une recette",
-        component: EditRecipe,
+        component: EditPage,
         exact: false,
     },
 ];

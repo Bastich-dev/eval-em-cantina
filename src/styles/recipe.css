@@ -1,0 +1,56 @@
+/* /////////////////////// RETURN BUTTON PAGE */
+
+.returnPage {
+    cursor: pointer;
+    transition: 0.5s;
+    width: max-content;
+}
+
+.returnPage:hover {
+    transform: scale(1.5) translateX(-15px);
+}
+
+/* /////////////////////// FORM */
+
+.formRecipe {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.formRecipe .ant-select-selection-overflow {
+    height: 80px;
+}
+
+.formRecipe .ant-radio-group label div {
+    position: relative;
+    z-index: 999;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.formRecipe .ant-radio-group label {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.formRecipe .ant-radio-group label:hover,
+.ant-radio-wrapper-checked,
+.levelActive {
+    opacity: 1 !important;
+    transform: scale(1.3);
+}
+
+.bottomLayer {
+    font-size: calc(2vh + 1vw);
+    justify-content: space-between;
+}
+
+@media (max-width: 880px) {
+    .bottomLayer {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .bottomLayer > div {
+        width: 100%;
+    }
+}
